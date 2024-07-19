@@ -94,7 +94,16 @@ python src/main.py test SAF_SpeedTest 43.2 45.6
 These commands will parse the test.dbc and test_log.txt files located in the data/ directory, process the CAN messages, and generate a plot for the SAF_SpeedTest signal.
 
 ## Output Screenshots
-![image](https://github.com/user-attachments/assets/ae5de356-ce91-4c4b-9cac-8f3f02ae049d)
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/ae5de356-ce91-4c4b-9cac-8f3f02ae049d" width="600" height="400" />
+  <img src="https://github.com/user-attachments/assets/d0fe7b06-18b1-4ff4-be53-82c877288097" width="600" height="400" />
+</div>
+
+
+
+
+
 
 ## Contributions
 
