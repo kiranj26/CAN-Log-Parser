@@ -45,6 +45,6 @@ jobs:
         fail_ci_if_error: true
 
     - name: Codacy code quality
-      uses: codacy/codacy-analysis-cli-action@v3
+      uses: codacy/codacy-analysis-cli-action@v4
       with:
         project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
