@@ -156,7 +156,7 @@ def plot_signals(parsed_data, signal_name, start_time, end_time):
         print(f"No data found for signal: {signal_name}")
         return
 
-    plt.figure(figsize=(30, 15))  # Adjust the size as needed
+    plt.figure(figsize=(15, 5))  # Adjust the size as needed
     plt.plot(timestamps, values)
     plt.xlabel('Time (s)')
     plt.ylabel('Value')
