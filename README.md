@@ -2,6 +2,12 @@
 
 This repository contains a Python-based tool to parse DBC formatted CAN log files and plot the signals. It leverages `cantools` for parsing DBC files and `matplotlib` for plotting signals, providing an easy way to visualize CAN signal data.
 
+![Build Status](https://github.com/kiranj26/CAN-Log-Parser/actions/workflows/ci.yml/badge.svg)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/4a476526a37145f2922f58a6f903ff27)](https://app.codacy.com/gh/kiranj26/CAN-Log-Parser/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+![Flake8 Linting](https://img.shields.io/badge/flake8-linting-brightgreen)
+![Python Version](https://img.shields.io/badge/python-3.12-blue)
+![License](https://img.shields.io/github/license/kiranj26/CAN-Log-Parser)
+
 ## Features
 
 - Parse DBC files to extract signal definitions
