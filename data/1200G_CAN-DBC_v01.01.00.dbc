@@ -1,0 +1,882 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: MasterNode DanfossNode DanfossSafetyProcessorNode
+
+
+BO_ 2431582721 AccelerationLimitsCommand: 8 MasterNode
+ SG_ ALC_AccelerationLimits : 0|1@1+ (1,0) [0|1] "Boolian"  MasterNode,DanfossNode
+ SG_ ALC_CurrentLimits : 1|1@1+ (1,0) [0|1] "Boolian"  DanfossNode,MasterNode
+ SG_ ALC_SurgeLim : 16|16@1+ (1,0) [0|32767] "RPM"  MasterNode,DanfossNode
+ SG_ ALC_AccelLim : 32|16@1+ (1,0) [0|32767] "RPM/sec"  MasterNode,DanfossNode
+ SG_ ALC_MaxSinkCurrent : 48|8@1+ (5,0) [0|1275] "Amp"  MasterNode,DanfossNode
+ SG_ ALC_MaxSourceCurrent : 56|8@1+ (5,0) [0|1275] "Amp"  MasterNode,DanfossNode
+
+BO_ 2230255874 AccurateFeedback: 8 DanfossNode
+ SG_ AF_SafetyMode M : 0|1@1+ (1,0) [0|1] "Enum"  MasterNode,DanfossNode
+ SG_ AF_Torque m0 : 1|15@1+ (0.2,-3212.8) [-3212.8|3212.8] "Nm"  DanfossNode,MasterNode
+ SG_ AF_Voltage m0 : 16|16@1+ (0.1,-3212.8) [-3212.8|3212.8] "Volts"  DanfossNode,MasterNode
+ SG_ AF_Current m0 : 32|16@1+ (0.1,-3212.8) [-3212.8|3212.8] "Amps"  DanfossNode,MasterNode
+ SG_ AF_Speed m0 : 48|16@1+ (0.5,-16064) [-16064|16064] "rpm"  DanfossNode,MasterNode
+ SG_ AFS_Torque m1 : 1|12@1+ (1,-2048) [-2048|2047] "Nm"  MasterNode,DanfossNode
+ SG_ AFS_Voltage m1 : 13|12@1+ (1,0) [0|4095] "Volts"  MasterNode,DanfossNode
+ SG_ AFS_Current m1 : 25|12@1+ (1,-2048) [-2048|2047] "Amps"  MasterNode,DanfossNode
+ SG_ AFS_Speed m1 : 37|15@1+ (1,-16384) [-16384|16383] "rpm"  MasterNode,DanfossNode
+ SG_ AFS_Counter m1 : 52|4@1+ (1,0) [0|15] "uint"  DanfossNode,MasterNode
+ SG_ AFS_CRC m1 : 56|8@1+ (1,0) [0|255] "uint"  MasterNode,DanfossNode
+
+BO_ 2230255875 SafetyFeedback: 8 DanfossSafetyProcessorNode
+ SG_ SAF_SafetyMode M : 0|1@1+ (1,0) [0|1] "Enum"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SAF_Torque m1 : 1|12@1+ (1,-2048) [-2048|2047] "Nm"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SAF_Voltage m1 : 13|12@1+ (1,0) [0|4095] "Volts"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SAF_Current m1 : 25|12@1+ (1,-2048) [-2048|2047] "Amps"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SAF_Speed m1 : 37|15@1+ (1,-16384) [-16384|16383] "rpm"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SAF_Counter m1 : 52|4@1+ (1,0) [0|15] "uint"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SAF_CRC m1 : 56|8@1+ (1,0) [0|255] "uint"  MasterNode,DanfossSafetyProcessorNode
+
+BO_ 2498691585 UniversalCommand: 8 MasterNode
+ SG_ UC_ControlMode M : 0|4@1+ (1,0) [0|6] "Enum"  DanfossNode,MasterNode,DanfossSafetyProcessorNode
+ SG_ UC_CommandCounter : 4|4@1+ (1,0) [0|15] "Integer"  DanfossNode,MasterNode,DanfossSafetyProcessorNode
+ SG_ UC_ActiveDischarge : 8|1@1+ (1,0) [0|1] "Bool"  DanfossSafetyProcessorNode,DanfossNode
+ SG_ UC_UseRawSpeed : 10|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossNode,DanfossSafetyProcessorNode
+ SG_ UC_DirOfRotation m1 : 11|1@1+ (1,0) [0|1] "Enum"  MasterNode,DanfossNode,DanfossSafetyProcessorNode
+ SG_ UCS_DirOfRotation m5 : 11|1@1+ (1,0) [0|1] "Enum"  MasterNode,DanfossNode,DanfossSafetyProcessorNode
+ SG_ UC_Enable : 12|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossNode,DanfossSafetyProcessorNode
+ SG_ UC_DisableAccLim : 13|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossNode,DanfossSafetyProcessorNode
+ SG_ UC_TorqueRequest m1 : 16|16@1+ (0.1,-3212.8) [-3212.8|3212.8] "Nm"  MasterNode,DanfossNode,DanfossSafetyProcessorNode
+ SG_ UC_SpeedRequest m2 : 16|16@1+ (0.5,-16064) [-16064|16064] "RPM"  MasterNode,DanfossNode,DanfossSafetyProcessorNode
+ SG_ UCS_TorqueRequest m5 : 16|16@1+ (0.1,-3212.8) [-3212.8|3212.8] "Nm"  MasterNode,DanfossNode,DanfossSafetyProcessorNode
+ SG_ UCS_SpeedRequest m6 : 16|16@1+ (0.5,-16064) [-16064|16064] "RPM"  MasterNode,DanfossNode,DanfossSafetyProcessorNode
+ SG_ UC_ForwardSpeedLimit m1 : 32|16@1+ (0.5,-16064) [0|16064] "RPM"  MasterNode,DanfossNode,DanfossSafetyProcessorNode
+ SG_ UC_MotoringTorqueLimit m2 : 32|16@1+ (0.1,-3212.8) [0|3212.8] "Nm"  MasterNode,DanfossNode,DanfossSafetyProcessorNode
+ SG_ UCS_ForwardSpeedLimit m5 : 32|12@1+ (5,0) [0|20475] "RPM"  MasterNode,DanfossNode,DanfossSafetyProcessorNode
+ SG_ UCS_MotoringTorqueLimit m6 : 32|12@1+ (1,0) [0|4095] "Nm"  MasterNode,DanfossNode,DanfossSafetyProcessorNode
+ SG_ UCS_ReverseSpeedLimit m5 : 44|12@1+ (-5,0) [-20475|0] "RPM"  MasterNode,DanfossNode,DanfossSafetyProcessorNode
+ SG_ UCS_RegenTorqueLimit m6 : 44|12@1+ (-1,0) [-4095|0] "Nm"  MasterNode,DanfossNode,DanfossSafetyProcessorNode
+ SG_ UC_ReverseSpeedLimit m1 : 48|16@1+ (0.5,-16064) [-16064|0] "RPM"  MasterNode,DanfossNode,DanfossSafetyProcessorNode
+ SG_ UC_RegenTorqueLimit m2 : 48|16@1+ (0.1,-3212.8) [-3212.8|0] "Nm"  MasterNode,DanfossNode,DanfossSafetyProcessorNode
+ SG_ UCS_TorqueChecksum m5 : 56|8@1+ (1,0) [0|255] "uint"  MasterNode,DanfossNode,DanfossSafetyProcessorNode
+ SG_ UCS_SpeedChecksum m6 : 56|8@1+ (1,0) [0|255] "uint"  MasterNode,DanfossNode,DanfossSafetyProcessorNode
+
+BO_ 2498691330 LimitedTorquePercentage: 8 DanfossNode
+ SG_ LTP_LegCurrent : 0|8@1+ (5,0) [0|1020] "Amps"  MasterNode,DanfossNode
+ SG_ LTP_HighBound : 8|8@1+ (0.8,-100) [-100|100] "%"  MasterNode,DanfossNode
+ SG_ LTP_LowBound : 16|8@1+ (0.8,-100) [-100|100] "%"  MasterNode,DanfossNode
+ SG_ LTP_StallPercentage : 24|8@1+ (0.4,0) [0|100] "Percent"  MasterNode,DanfossNode
+ SG_ LTP_AngularDistance : 32|16@1+ (3.75,0) [0|122876] "Degrees"  MasterNode,DanfossNode
+ SG_ LTP_TorqueDesired : 48|16@1+ (0.1,-3212.8) [-3212.8|3212.8] "Nm"  MasterNode,DanfossNode
+
+BO_ 2297364738 SystemStatusMessage: 8 DanfossNode
+ SG_ SS_NotEnabled : 0|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_OverLegCurrent : 1|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_OverBusCurrent : 2|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_OverPhaseAdvance : 3|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_UnderVoltageWarning : 4|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_RotorOverTemp : 5|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_StatorOverTemp : 6|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_InverterOverTemp : 7|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_OverSpeedWarning : 8|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_OverVoltageWarning : 9|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_OverSpeedAlarm : 10|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_OverVoltageAlarm : 11|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_AdcCalProblem : 12|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_LimpHomeMode : 13|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_InvFaultOccurred : 14|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_InverterFault : 15|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_NotEnabled_Hist : 16|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_OverLegCurrent_Hist : 17|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_OverBusCurrent_Hist : 18|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_OverPhaseAdv_Hist : 19|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_UnderVoltage_Hist : 20|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_RotorOverTemp_Hist : 21|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_StatorOverTemp_Hist : 22|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_InvOverTemp_Hist : 23|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_OverSpeedWarn_Hist : 24|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_OverVoltWarn_Hist : 25|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_OverSpeedAlarm_Hist : 26|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_OverVoltAlarm_Hist : 27|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_AdcCalProblem_Hist : 28|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_LimpHomeMode_Hist : 29|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_InvFaultOccurd_Hist : 30|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_InverterFault_Hist : 31|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_ControlMode : 32|3@1+ (1,0) [0|7] "Enum"  DanfossNode,MasterNode
+ SG_ SS_VbemfOffset : 36|4@1+ (2,-22) [-22|8] "V"  MasterNode,DanfossNode
+ SG_ SS_PosOffsetDelta : 40|8@1+ (1,-128) [-128|127] "Count"  DanfossNode,MasterNode
+ SG_ SS_ForceVoltageControl : 48|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_CANLimiting : 49|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_DisabledInMotion : 50|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_ABCPhaseOrder : 51|1@1+ (1,0) [0|1] "Enum"  DanfossNode,MasterNode
+ SG_ SS_RegenSwOpen : 52|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_CurTripFltIbusIleg : 53|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_ActiveDampAccelLim : 54|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_UsingRawSpeed : 55|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_TurboMode : 56|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_ForcedOpenLoop : 57|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_StallConditionsActive : 58|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_PhaseCurSenErr : 59|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_BadPositionSignal : 60|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_BadSwitch : 61|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_InvalidPowerSupply : 62|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ SS_PowerSwOff : 63|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+
+BO_ 2364473602 FuSaSystemStatusMessage: 8 DanfossNode
+ SG_ FSS_SafeStateShutdown : 0|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossNode
+ SG_ FSS_SafeStateMonitor : 1|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossNode
+ SG_ FSS_InterprocessorCommsFault : 2|2@1+ (1,0) [0|3] "Enum"  MasterNode,DanfossNode
+ SG_ FSS_ActiveDischargeState : 4|3@1+ (1,0) [0|3] "Enum"  MasterNode,DanfossNode
+ SG_ FSS_SafetyCPU_WatchdogTimeout : 7|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossNode
+ SG_ FSS_CAN_SafetyMessageCounter : 52|4@1+ (1,0) [0|15] "Counter"  MasterNode,DanfossNode
+ SG_ FSS_MessageCRC : 56|8@1+ (1,0) [0|255] "Unsgined"  MasterNode,DanfossNode
+
+BO_ 2297364739 SafetyProcessorStatusMessage1: 8 DanfossSafetyProcessorNode
+ SG_ SPS1_HV_VoltageInRange : 0|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_InvalidCAN_Message : 1|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_InvalidCAN_Message_Hist : 2|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_CAN_Timeout : 3|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_CAN_Reserved : 4|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_ADC_Validation : 5|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_InterprocessorCommsFault : 6|2@1+ (1,0) [0|3] "Enum"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_StackOverflow : 8|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_FlowControl : 9|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_ISR_Monitor : 10|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_RegisterMonitor : 11|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_RAM_Code : 12|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_Overvoltage : 13|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_Overvoltage_Hist : 14|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_Undervoltage : 15|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_Undervoltage_Hist : 16|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_12V_Rail : 17|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_Backup12V_Rail : 18|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_CT_Fault : 19|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_HV_BusMonitor : 20|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_CT_VoltageRef : 21|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_IabcSum : 22|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_ExcitationAmp : 23|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_Resolver : 24|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_ResolverPosition : 25|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_RotorTempSensor : 26|2@1+ (1,0) [0|3] "Enum"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_UpperGateDriver : 28|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_LowerGateDriver : 29|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_ExcessiveTorque : 30|2@1+ (1,0) [0|3] "Enum"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_InvalidTrqDirection : 32|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_MainCPU_WatchdogTimeout : 33|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_9VTempReference : 34|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_MainCPU_Reset : 35|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_SoftwareSafeState : 36|2@1+ (1,0) [0|3] "Enum"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_HardwareSafeState : 38|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_InverterSafeStateMode : 39|2@1+ (1,0) [0|3] "Enum"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_PowerOnSelfTestStatus : 41|8@1+ (1,0) [0|255] "Enum"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_SystemArmed : 49|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_HardwareEnable : 50|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_CAN_SafetyMessageCounter : 52|4@1+ (1,0) [0|15] "Counter"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS1_MessageCRC : 56|8@1+ (1,0) [0|255] "Integer"  MasterNode,DanfossSafetyProcessorNode
+
+BO_ 2364473603 SafetyProcessorStatusMessage2: 8 DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr1OutputError : 0|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr2OutputError : 1|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr3OutputError : 2|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr4OutputError : 3|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr5OutputError : 4|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr6OutputError : 5|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr1TemperatureError : 6|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr2TemperatureError : 7|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr3TemperatureError : 8|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr4TemperatureError : 9|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr5TemperatureError : 10|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr6TemperatureError : 11|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_IGBT1DesatError : 12|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_IGBT2DesatError : 13|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_IGBT3DesatError : 14|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_IGBT4DesatError : 15|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_IGBT5DesatError : 16|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_IGBT6DesatError : 17|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr1SecLVPS_Failure : 18|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr2SecLVPS_Failure : 19|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr3SecLVPS_Failure : 20|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr4SecLVPS_Failure : 21|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr5SecLVPS_Failure : 22|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr6SecLVPS_Failure : 23|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr1ShootThroughError : 24|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr2ShootThroughError : 25|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr3ShootThroughError : 26|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr4ShootThroughError : 27|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr5ShootThroughError : 28|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_GateDvr6ShootThroughError : 29|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_UpperGateDvrInternalError : 30|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_LowerGateDvrInternalError : 31|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_UpperGateDvrSPI_Error : 32|2@1+ (1,0) [0|3] "Enum"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_LowerGateDvrSPI_Error : 34|2@1+ (1,0) [0|3] "Enum"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_ReadyToEnable : 36|1@1+ (1,0) [0|1] "Bool"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_StatorTempSensor : 37|2@1+ (1,0) [0|3] "Enum" Vector__XXX
+ SG_ SPS2_CAN_SafetyMessageCounter : 52|4@1+ (1,0) [0|15] "Counter"  MasterNode,DanfossSafetyProcessorNode
+ SG_ SPS2_MessageCRC : 56|8@1+ (1,0) [0|255] "Integer"  MasterNode,DanfossSafetyProcessorNode
+
+BO_ 2632909058 CANWatchdogStatusMessage: 8 DanfossNode
+ SG_ WS_CmdWatchdogStatus : 0|8@1+ (1,0) [165|165] "Constant"  DanfossNode,MasterNode
+ SG_ WS_A_ToggleBit : 16|1@1+ (1,0) [0|1] "Integer"  DanfossNode,MasterNode
+ SG_ WS_B_SWSubVersion : 32|4@1+ (1,0) [0|15] "Integer"  DanfossNode,MasterNode
+ SG_ WS_B_SWMinorVersion : 36|8@1+ (1,0) [0|255] "Integer"  DanfossNode,MasterNode
+ SG_ WS_B_SWMajorVersion : 44|4@1+ (1,0) [0|15] "Integer"  DanfossNode,MasterNode
+ SG_ WS_C_CANVersion : 48|4@1+ (1,0) [0|4] "Integer"  DanfossNode,MasterNode
+ SG_ WS_Error : 56|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ WS_RegenType : 31|1@1+ (1,0) [0|1] "Bool"  DanfossNode,MasterNode
+ SG_ WS_SystemEnumeration : 19|9@1+ (1,0) [0|511] "Integer"  DanfossNode,MasterNode
+
+BO_ 2632909313 CANHeartbeatCommand: 8 MasterNode
+ SG_ CHC_HeartbeatIdentifier1 : 0|16@1+ (1,0) [165|165] "Enum"  MasterNode,DanfossNode
+ SG_ CHC_ClearWatchdogError : 16|8@1+ (1,0) [0|90] "Enum"  MasterNode,DanfossNode
+ SG_ CHC_HeartbeatIdentifier2 : 24|8@1+ (1,0) [0|0] "Enum"  MasterNode,DanfossNode
+
+BO_ 2565800194 Temperature: 8 DanfossNode
+ SG_ TM_Inverter : 8|8@1+ (1,-40) [-40|210] "Celsius"  DanfossNode,MasterNode
+ SG_ TM_Rotor : 16|8@1+ (1,-40) [-40|210] "Celsius"  DanfossNode,MasterNode
+ SG_ TM_Stator : 24|8@1+ (1,-40) [-40|210] "Celsius"  DanfossNode,MasterNode
+ SG_ TM_IGBTJunction : 32|8@1+ (1,-40) [-40|210] "Celsius"  DanfossNode,MasterNode
+
+BO_ 2431582466 LimitsMessage: 8 DanfossNode
+ SG_ LM_MessageID M : 0|4@1+ (1,0) [0|15] "Int"  DanfossNode,MasterNode
+ SG_ LM_MaxSinkCurrent m6 : 16|8@1+ (5,0) [0|1275] "Amp"  DanfossNode,MasterNode
+ SG_ LM_MaxSourceCurrent m6 : 24|8@1+ (5,0) [0|1275] "Amp"  DanfossNode,MasterNode
+ SG_ LM_MaxRegenTorqueAllowed m6 : 32|16@1+ (0.1,-3212.8) [-3212.8|0] "Nm"  DanfossNode,MasterNode
+ SG_ LM_MaxDriveTorqueAllowed m6 : 48|16@1+ (0.1,-3212.8) [0|3212.8] "Nm"  DanfossNode,MasterNode
+
+
+
+CM_ "UQM CAN database definition for Torque and Speed control modes.
+Uses extended (29-bit) CAN identifiers, and little endian messages.";
+CM_ BU_ MasterNode "System Controller";
+CM_ BU_ DanfossNode "UQM Inverter";
+CM_ BU_ DanfossSafetyProcessorNode "Danfoss Safety Processor";
+CM_ BO_ 2431582721 "This command allows the user to dynamically change the acceleration limit of the controller.";
+CM_ SG_ 2431582721 ALC_AccelerationLimits "Update Acceleration Limits when set to 1";
+CM_ SG_ 2431582721 ALC_CurrentLimits "Update Current Limits when set to 1";
+CM_ SG_ 2431582721 ALC_SurgeLim "This value controls surges in acceleration.
+
+Only valid if ALC_AccelerationLimits = 1";
+CM_ SG_ 2431582721 ALC_AccelLim "Maximum rate of acceleration the system will produce to reach the targeted value commanded in the Universal Command.
+
+Only valid if ALC_AccelerationLimits = 1";
+CM_ SG_ 2431582721 ALC_MaxSinkCurrent "Maximum current the system is allowed to sink when in drive mode
+
+Only valid if ALC_CurrentLimits = 1";
+CM_ SG_ 2431582721 ALC_MaxSourceCurrent "Maximum current the system is allowed to source when in regen mode
+
+Only valid if ALC_CurrentLimits = 1";
+CM_ BO_ 2230255874 "This message reports the current values of Motor Speed in rpm, Motor Torque in Nm, High Voltage DC voltage, and High Voltage DC current
+
+The timing is user controlled by the ?Transmission Rate? box on the CANbus tab of the System Configuration section of the UQM Motor Controller software.
+
+The default value is 102 ms. ";
+CM_ SG_ 2230255874 AF_SafetyMode "0 is standard configuration
+1 is safety configuration";
+CM_ SG_ 2230255874 AF_Torque "This is the torque being output by the motor which is calculated based on measured parameters. A negative torque value always indicates regeneration torque while a positive value indicates motoring torque.
+";
+CM_ SG_ 2230255874 AF_Voltage "The DC bus voltage available at the DC input terminals of the inverter";
+CM_ SG_ 2230255874 AF_Current "This is the DC bus current being consumed (motoring) or produced (regeneration) by the inverter.  Positive values indicate motoring, while negative values indicate regeneration operation.";
+CM_ SG_ 2230255874 AF_Speed "This is the speed of rotation of the rotor.";
+CM_ SG_ 2230255874 AFS_Torque "This is the torque being output by the motor which is calculated based on measured parameters. A negative torque value always indicates regeneration torque while a positive value indicates motoring torque.";
+CM_ SG_ 2230255874 AFS_Voltage "The DC bus voltage available at the DC input terminals of the inverter";
+CM_ SG_ 2230255874 AFS_Current "This is the DC bus current being consumed (motoring) or produced (regeneration) by the inverter.  Positive values indicate motoring, while negative values indicate regeneration operation.";
+CM_ SG_ 2230255874 AFS_Speed "This is the speed of rotation of the rotor.";
+CM_ SG_ 2230255874 AFS_Counter "Message Counter";
+CM_ SG_ 2230255874 AFS_CRC "Message CRC";
+CM_ BO_ 2230255875 "This message reports the main processor system status
+
+The timing is user controlled by the ?Transmission Rate? box on the CANbus tab of the System Configuration section of the UQM Motor Controller software.
+
+The default value is 102 ms. ";
+CM_ SG_ 2230255875 SAF_SafetyMode "0 is standard configuration
+1 is safety configuration";
+CM_ SG_ 2230255875 SAF_Torque "This is the torque being output by the motor which is calculated based on measured parameters. A negative torque value always indicates regeneration torque while a positive value indicates motoring torque.";
+CM_ SG_ 2230255875 SAF_Voltage "The DC bus voltage available at the DC input terminals of the inverter";
+CM_ SG_ 2230255875 SAF_Current "This is the DC bus current being consumed (motoring) or produced (regeneration) by the inverter.  Positive values indicate motoring, while negative values indicate regeneration operation.";
+CM_ SG_ 2230255875 SAF_Speed "This is the speed of rotation of the rotor.";
+CM_ SG_ 2230255875 SAF_Counter "Message Counter";
+CM_ SG_ 2230255875 SAF_CRC "Message CRC";
+CM_ BO_ 2498691585 "The message commands the MCU to operate in a certain way depending on the UniversalCmd_ControlMode field.
+
+The timing is user controlled by the ?Timeout Period? box on the CANbus tab of the System Configuration section of the UQM Motor Controller software.
+
+The time between successive CANHeartbeatCommand commands may not exceed the value in the ?Timeout Period? field.
+
+The default value is 996 ms. ";
+CM_ SG_ 2498691585 UC_ControlMode "The Control Mode byte defines the controller's mode of operation: torque, speed or voltage control. Sending a value outside the valid range results in the inverter ignoring the message and continuing to use the last received valid command.";
+CM_ SG_ 2498691585 UC_CommandCounter "The Command Counter is used to validate the command message. It operates in one of three modes: Ignore counter, Must change value, Must count in order. The counter mode is set in the UQM system configuration.";
+CM_ SG_ 2498691585 UC_ActiveDischarge "Trigger discharge of HV DC capacitors";
+CM_ SG_ 2498691585 UC_UseRawSpeed "This bit, when set to Enabled, allows the inverter to use raw speed to calculate desired torque. Setting it to Disabled causes the inverter to use filtered speed to calculate the torque.";
+CM_ SG_ 2498691585 UC_DirOfRotation "This bit controls the direction of rotation of the motor. Whether Forward means clockwise or counter-clockwise can be configured using the System Configuration dialog's Change the direction of 'Forward' setting located on the Control tab.";
+CM_ SG_ 2498691585 UCS_DirOfRotation "This bit controls the direction of rotation of the motor for safety systems. Whether Forward means clockwise or counter-clockwise can be configured using the System Configuration dialog's Change the direction of 'Forward' setting located on the Control tab.";
+CM_ SG_ 2498691585 UC_Enable "This bit, when set to Enabled, allows the inverter to control to the requested torque command. Setting it to Disabled causes the inverter to control to zero torque. This has the same effect as sending a 0 Nm torque request.";
+CM_ SG_ 2498691585 UC_DisableAccLim "This bit allows the Universal Command to override the Acceleration Limit in the System Configuration.  The controller ignores any acceleration limit and active damping setting while this bit is asserted, and it obeys these settings when it is zero.";
+CM_ SG_ 2498691585 UC_TorqueRequest "This field contains the requested torque command. The sign determines whether motoring/regeneration torque is being commanded. A positive torque command always means motoring torque while a negative torque command always means regeneration torque";
+CM_ SG_ 2498691585 UC_SpeedRequest "The requested speed command. The sign determines the direction of rotation of the motor. Whether a positive speed request means clockwise / counter-clockwise can be configured using the System Configuration dialog";
+CM_ SG_ 2498691585 UCS_TorqueRequest "This field contains the requested torque command. The sign determines whether motoring/regeneration torque is being commanded. A positive torque command always means motoring torque while a negative torque command always means regeneration torque";
+CM_ SG_ 2498691585 UCS_SpeedRequest "The requested speed command. The sign determines the direction of rotation of the motor. Whether a positive speed request means clockwise / counter-clockwise can be configured using the System Configuration dialog";
+CM_ SG_ 2498691585 UC_ForwardSpeedLimit "The maximum speed in the forward direction that the motor is allowed to accelerate to before the inverter starts to limit motoring torque. Must be a positive value. Negative speed value causes the inverter to set forward speed limit to 0 rpm.";
+CM_ SG_ 2498691585 UC_MotoringTorqueLimit "This field contains the maximum allowed motoring torque that the inverter produces to accelerate to the requested speed value. This limit must be a positive value. Sending a negative value causes the inverter to set motoring torque limit to 0 Nm.";
+CM_ SG_ 2498691585 UCS_ForwardSpeedLimit "The maximum speed in the forward direction that the motor is allowed to accelerate to before the inverter starts to limit motoring torque. Must be a positive value. Negative speed value causes the inverter to set forward speed limit to 0 rpm.";
+CM_ SG_ 2498691585 UCS_MotoringTorqueLimit "This field contains the maximum allowed motoring torque that the inverter produces to accelerate to the requested speed value. This limit must be a positive value. Sending a negative value causes the inverter to set motoring torque limit to 0 Nm.";
+CM_ SG_ 2498691585 UCS_ReverseSpeedLimit "The maximum speed in the reverse direction that the motor is allowed to accelerate to before the inverter starts to limit motoring torque. Must be a negative value. Positive speed value causes the inverter to set reverse speed limit to 0 rpm.";
+CM_ SG_ 2498691585 UCS_RegenTorqueLimit "This field contains the maximum allowed regeneration torque that the inverter produces to decelerate to the requested speed value. This limit must be a negative value. Sending a positive value causes the inverter to set regeneration torque limit to 0 Nm.";
+CM_ SG_ 2498691585 UC_ReverseSpeedLimit "The maximum speed in the reverse direction that the motor is allowed to accelerate to before the inverter starts to limit motoring torque. Must be a negative value. Positive speed value causes the inverter to set reverse speed limit to 0 rpm.";
+CM_ SG_ 2498691585 UC_RegenTorqueLimit "This field contains the maximum allowed regeneration torque that the inverter produces to decelerate to the requested speed value. This limit must be a negative value. Sending a positive value causes the inverter to set regeneration torque limit to 0 Nm.";
+CM_ SG_ 2498691585 UCS_TorqueChecksum "Safety System Torque Control Mode Checksum";
+CM_ SG_ 2498691585 UCS_SpeedChecksum "Safety System Speed Control Mode Checksum";
+CM_ BO_ 2498691330 "This message provides limits on how much torque can be generated and certain other status data. 
+
+The timing is user controlled by the ?Transmission Rate? box on the CANbus tab of the System Configuration section of the UQM Motor Controller software.
+
+The default value is 102 ms.";
+CM_ SG_ 2498691330 LTP_LegCurrent "This is the absolute value of the peak currents passing through the motor's phase leads.  For PP1xx control types, the factor is 4.
+";
+CM_ SG_ 2498691330 LTP_HighBound "This is the percentage of maximum available motoring torque at the current operating point, after the user's torque request has filtered through all of the inverter's safety subsystems.";
+CM_ SG_ 2498691330 LTP_LowBound "This is the percentage of maximum available regeneration torque at the current operating point, after the user's torque request has filtered through all of the inverter's safety subsystems.";
+CM_ SG_ 2498691330 LTP_StallPercentage "When this value reaches 100%, the stall safety limit trips and the system limits itself to 10% of its rated torque for approximately 30 seconds.";
+CM_ SG_ 2498691330 LTP_AngularDistance "This is the angular distance in degrees. In forward, the Angular Distance counts up. In reverse, it counts down. The count can roll over in either direction.";
+CM_ SG_ 2498691330 LTP_TorqueDesired "This is the maximum available torque at the current operating point after the user's torque request has filtered through all of the inverter's safety subsystems";
+CM_ BO_ 2297364738 "This message provides the VCU with a regular updates on status data.
+
+The message is sent every 500 ms or when a change in status is detected.";
+CM_ SG_ 2297364738 SS_NotEnabled "Indicates whether the inverter is ready to output the user desired torque";
+CM_ SG_ 2297364738 SS_OverLegCurrent "Indicates whether the motor leg (phase) currents are over their normal operating range value";
+CM_ SG_ 2297364738 SS_OverBusCurrent "Indicates whether the bus (DC) current is over its normal operating range value";
+CM_ SG_ 2297364738 SS_OverPhaseAdvance "Indicates an internal error condition resulting in reduced torque output. It should never be active under normal operating conditions";
+CM_ SG_ 2297364738 SS_UnderVoltageWarning "Indicates that the DC bus voltage has fallen below a preset minimum threshold. The inverter reduces motoring limit to prevent the bus voltage from falling further";
+CM_ SG_ 2297364738 SS_RotorOverTemp "Indicates that the rotor temperature has exceeded the maximum allowed value. The inverter reduces torque output capacity to prevent the temperature rising further. This bit is also set if an open rotor temperature sensor is detected";
+CM_ SG_ 2297364738 SS_StatorOverTemp "Indicates that the stator temperature has exceeded the maximum allowed value. The inverter reduces torque output capacity to prevent the temperature rising further. This bit is also be set if an open stator temperature sensor is detected";
+CM_ SG_ 2297364738 SS_InverterOverTemp "Indicates that the power switch temperature has exceeded the maximum allowed value. The inverter reduces torque output capacity to prevent the temperature rising further. This bit is also set if an open power switch temperature sensor is detected";
+CM_ SG_ 2297364738 SS_OverSpeedWarning "Indicates that the motor speed has exceeded the high speed warning threshold. The inverter reduces motoring capability in an attempt to prevent speed from increasing further";
+CM_ SG_ 2297364738 SS_OverVoltageWarning "Indicates that the DC bus voltage has exceeded the high voltage warning threshold. The inverter reduces regeneration capability to prevent the voltage from being boosted further";
+CM_ SG_ 2297364738 SS_OverSpeedAlarm "Indicates that the motor speed has exceeded the high speed alarm threshold. The inverter does not allow motoring until the speed has reduced below this threshold";
+CM_ SG_ 2297364738 SS_OverVoltageAlarm "Indicates that the DC bus voltage has exceeded the high voltage alarm threshold. The inverter severely limits regeneration capability to prevent the voltage from being boosted further";
+CM_ SG_ 2297364738 SS_AdcCalProblem "Indicates that the ADC calibration data read from the EEPROM has failed integrity checks. Test is performed at power up. If set, the inverter uses default calibration data and severely limits torque output. A power cycle is required to clear this error";
+CM_ SG_ 2297364738 SS_LimpHomeMode "Indicates a serious impairment to its normal operation.  Limp Home Mode allows continued but reduced operation as safely as possible given the impairment.  The torque delivered will be limited by the Limp Home Percentage.";
+CM_ SG_ 2297364738 SS_InvFaultOccurred "Inverter faults are power switch protection events. This bit is set to indicate that such a protection event has occurred";
+CM_ SG_ 2297364738 SS_InverterFault "Inverter faults are power switch protection events. Too much heat or too much current can damage the switches, so the controller protects them and sets this bit while it is doing so";
+CM_ SG_ 2297364738 SS_NotEnabled_Hist "Indicates whether corresponding system error bit has ever been set since the last power cycle. Refer to SS_NotEnabled";
+CM_ SG_ 2297364738 SS_OverLegCurrent_Hist "Indicates whether corresponding system error bit has ever been set since the last power cycle. Refer to SS_OverLegCurrent";
+CM_ SG_ 2297364738 SS_OverBusCurrent_Hist "Indicates whether corresponding system error bit has ever been set since the last power cycle. Refer to SS_OverBusCurrent";
+CM_ SG_ 2297364738 SS_OverPhaseAdv_Hist "Indicates whether corresponding system error bit has ever been set since the last power cycle. Refer to SS_OverPhaseAdvance";
+CM_ SG_ 2297364738 SS_UnderVoltage_Hist "Indicates whether corresponding system error bit has ever been set since the last power cycle. Refer to SS_UnderVoltageWarning";
+CM_ SG_ 2297364738 SS_RotorOverTemp_Hist "Indicates whether corresponding system error bit has ever been set since the last power cycle. Refer to SS_OverRotorTemp";
+CM_ SG_ 2297364738 SS_StatorOverTemp_Hist "Indicates whether corresponding system error bit has ever been set since the last power cycle. Refer to SS_OverMotorTemp";
+CM_ SG_ 2297364738 SS_InvOverTemp_Hist "Indicates whether corresponding system error bit has ever been set since the last power cycle. Refer to SS_OverInverterTemp";
+CM_ SG_ 2297364738 SS_OverSpeedWarn_Hist "Indicates whether corresponding system error bit has ever been set since the last power cycle. Refer to SS_OverSpeedWarning";
+CM_ SG_ 2297364738 SS_OverVoltWarn_Hist "Indicates whether corresponding system error bit has ever been set since the last power cycle. Refer to SS_OverVoltageWarning";
+CM_ SG_ 2297364738 SS_OverSpeedAlarm_Hist "Indicates whether corresponding system error bit has ever been set since the last power cycle. Refer to SS_OverSpeedAlarm";
+CM_ SG_ 2297364738 SS_OverVoltAlarm_Hist "Indicates whether corresponding system error bit has ever been set since the last power cycle. Refer to SS_OverVoltageAlarm";
+CM_ SG_ 2297364738 SS_AdcCalProblem_Hist "Indicates whether corresponding system error bit has ever been set since the last power cycle. Refer to SS_AdcCalProblem";
+CM_ SG_ 2297364738 SS_LimpHomeMode_Hist "Indicates whether corresponding system error bit has ever been set since the last power cycle. Refer to SS_OverRegenPower";
+CM_ SG_ 2297364738 SS_InvFaultOccurd_Hist "Indicates whether corresponding system error bit has ever been set since the last power cycle. Refer to SS_InvFaultOccurred";
+CM_ SG_ 2297364738 SS_InverterFault_Hist "Indicates whether corresponding system error bit has ever been set since the last power cycle. Refer to SS_InverterFault";
+CM_ SG_ 2297364738 SS_ControlMode "Current Control Mode
+0: None
+1: Torque Control
+2: Speed Control
+3: Voltage Control
+4-7: Undefined";
+CM_ SG_ 2297364738 SS_VbemfOffset "Difference between default and calculated Back EMF";
+CM_ SG_ 2297364738 SS_PosOffsetDelta "Difference between default rotor offset and calculated rotor offset";
+CM_ SG_ 2297364738 SS_ForceVoltageControl "Indicates whether the inverter is operating in Forced Voltage Control Mode. This occurs only if a dangerous over voltage condition is detected. In this case, the inverter switches to voltage control mode in an attempt to reduce the bus voltage";
+CM_ SG_ 2297364738 SS_CANLimiting "Indicates whether the inverter's output is being limited by limits sent over the CANbus";
+CM_ SG_ 2297364738 SS_DisabledInMotion "Indicates that a non-zero motor speed is detected while the Enable bit in the Control Parameters signal of the UniversalCommand Message is not set. This implies that the motor is being spun by an external force";
+CM_ SG_ 2297364738 SS_ABCPhaseOrder "Indicates the internally sensed direction of rotation of the motor";
+CM_ SG_ 2297364738 SS_RegenSwOpen "Set when the regeneration switch is open, and the motor system cannot produce any regeneration power";
+CM_ SG_ 2297364738 SS_CurTripFltIbusIleg "Set when the controller is limiting it torque by half because the power switch current or bus current has grown too large";
+CM_ SG_ 2297364738 SS_ActiveDampAccelLim "Set while the controller is limiting its torque in order to meet the acceleration limit or active damping limit set in the System Configuration";
+CM_ SG_ 2297364738 SS_UsingRawSpeed "Indicates that the inverter is using raw speed to calculate its desired torque";
+CM_ SG_ 2297364738 SS_TurboMode "Indicates whether the system has entered a higher efficiency mode of operation. This mode is entered automatically when the motor speed exceeds base speed at a given DC voltage";
+CM_ SG_ 2297364738 SS_ForcedOpenLoop "Indicates that the system has entered an open loop mode of operation. This typically occurs when a problem is detected with hardware sensors/circuitry, which means measurements cannot be trusted. Output capability is severely limited";
+CM_ SG_ 2297364738 SS_StallConditionsActive "Indicates that the inverter senses a stall condition (non-zero torque request at zero speed). The inverter enters a stall algorithm, that applies short timer period torque pulses up until desired torque request in an attempt to overcome the stall";
+CM_ SG_ 2297364738 SS_PhaseCurSenErr "Indicates that the inverter has sensed an error in one or more of the leg (phase) current sensors. In this case, the inverter enters an open loop mode of operation and limits torque output";
+CM_ SG_ 2297364738 SS_BadPositionSignal "Indicates that the inverter senses a problem with the position signal";
+CM_ SG_ 2297364738 SS_BadSwitch "Indicates that the inverter senses a problem with the power switch driver circuitry";
+CM_ SG_ 2297364738 SS_InvalidPowerSupply "Indicates that the controller's internal power supply is out of regulation. In this case, the inverter enters open loop mode of operation and limits the output capability";
+CM_ SG_ 2297364738 SS_PowerSwOff "Indicates that the system's power switches have shut down because of a problem with the hardware. The power switches have been shut down to protect the operator and the UQM controller";
+CM_ BO_ 2364473602 "This message provides the VCU with a regular updates on status data for Functional Safety Systems.
+
+The message is sent every 500 ms or when a change in status is detected.";
+CM_ SG_ 2364473602 FSS_SafeStateShutdown "False: Main CPU has not triggered safe state
+True: Main CPU has triggered safe state";
+CM_ SG_ 2364473602 FSS_SafeStateMonitor "False: Main CPU detected safe state is not enabled
+True :Main CPU detected safe state is enabled";
+CM_ SG_ 2364473602 FSS_InterprocessorCommsFault "Indicates the status of the interprocessor communications safety mechanism";
+CM_ SG_ 2364473602 FSS_ActiveDischargeState "Indicates the status of the inverter active discharge system";
+CM_ SG_ 2364473602 FSS_SafetyCPU_WatchdogTimeout "False: Safety CPU watchdog timer is OK
+True:  Safety CPU watchdog timer has expired";
+CM_ SG_ 2364473602 FSS_CAN_SafetyMessageCounter "Increments (modulo 16) every time a new message is sent";
+CM_ SG_ 2364473602 FSS_MessageCRC "Message CRC";
+CM_ BO_ 2297364739 "This message reports the safety processor system status
+
+The timing is user controlled by the ?Transmission Rate? box on the CANbus tab of the System Configuration section of the UQM Motor Controller software.
+
+The default value is 102 ms. ";
+CM_ SG_ 2297364739 SPS1_HV_VoltageInRange "False: TBD
+True: TBD";
+CM_ SG_ 2297364739 SPS1_InvalidCAN_Message "False: The last received CAN message had no errors
+True:  The last received CAN message contained errors";
+CM_ SG_ 2297364739 SPS1_InvalidCAN_Message_Hist "False: No CAN message had errors since the last power cycle
+True:  One or more CAN message had errors since the last power cycle";
+CM_ SG_ 2297364739 SPS1_CAN_Timeout "False: CAN message timeout not expired
+True:  CAN message timeout expired";
+CM_ SG_ 2297364739 SPS1_CAN_Reserved "Reserved for future use";
+CM_ SG_ 2297364739 SPS1_ADC_Validation "False: ADC operating Nominally
+True:  ADC validation failed";
+CM_ SG_ 2297364739 SPS1_InterprocessorCommsFault "Indicates the interprocessor communications status";
+CM_ SG_ 2297364739 SPS1_StackOverflow "False: Safety processor stack utilization nominal
+True:  Safety processor stack has overflowed";
+CM_ SG_ 2297364739 SPS1_FlowControl "False: Safety processor flow control is nominal
+True:  Safety processor flow control anomaly was detected";
+CM_ SG_ 2297364739 SPS1_ISR_Monitor "False: Safety processor ISR monitor is nominal
+True:  Safety processor ISR monitor has flagged an error";
+CM_ SG_ 2297364739 SPS1_RegisterMonitor "False: Safety processor critical registers are in a valid state
+True : Safety processor critical registers are in unexpected state";
+CM_ SG_ 2297364739 SPS1_RAM_Code "False: RAM resident code is unmodified.
+True: RAM resident code has been modified.";
+CM_ SG_ 2297364739 SPS1_Overvoltage "False: HV bus is not over maximum operating voltage
+True:  HV bus is over maximum operating voltage";
+CM_ SG_ 2297364739 SPS1_Overvoltage_Hist "False: HV bus was never over maximum operating voltage since last power cycle
+True:  HV bus was over maximum operating voltage since last power cycle";
+CM_ SG_ 2297364739 SPS1_Undervoltage "False: HV bus is not under minimum operating voltage
+True:  HV bus is under minimum operating voltage";
+CM_ SG_ 2297364739 SPS1_Undervoltage_Hist "False: HV bus was never under minimum operating voltage since last power cycle
+True:  HV bus was under minimum operating voltage since last power cycle";
+CM_ SG_ 2297364739 SPS1_12V_Rail "False: Primary 12V rail Voltage is nominal
+True:  Primary 12V rail Voltage is out of range";
+CM_ SG_ 2297364739 SPS1_Backup12V_Rail "False: Backup 12V rail Voltage is nominal
+True:  Backup 12V rail Voltage is out of range";
+CM_ SG_ 2297364739 SPS1_CT_Fault "False: Current transformer power supply in operation
+True: Current transformer power supply error detected
+";
+CM_ SG_ 2297364739 SPS1_HV_BusMonitor "False: No HV bus monitor fault
+True:  HV bus monitor fault";
+CM_ SG_ 2297364739 SPS1_CT_VoltageRef "False: CT voltage reference is nominal
+True:  CT voltage reference is out of range";
+CM_ SG_ 2297364739 SPS1_IabcSum "False: phase current sum is nominal
+True:  phase current sum is out of bounds";
+CM_ SG_ 2297364739 SPS1_ExcitationAmp "False: Excitation amplifier operating nominally
+True:  Excitation amplifier fault detected";
+CM_ SG_ 2297364739 SPS1_Resolver "False: Resolver IC in operating nominally
+True: Resolver IC fault detected";
+CM_ SG_ 2297364739 SPS1_ResolverPosition "False: Software and resolver IC position measurements are within tolerance
+True:  Software and resolver IC position measurements differ";
+CM_ SG_ 2297364739 SPS1_RotorTempSensor "Indicates that the rotor temperature signal is shorted to a voltage rail (out of expected range)";
+CM_ SG_ 2297364739 SPS1_UpperGateDriver "False: No upper gate driver fault
+True:  Upper gate driver fault";
+CM_ SG_ 2297364739 SPS1_LowerGateDriver "False: No lower gate driver fault
+True:  Lower gate driver fault";
+CM_ SG_ 2297364739 SPS1_ExcessiveTorque "Indicates whether the motor is producing torque in excess of what was commanded (either motoring or regen torque)";
+CM_ SG_ 2297364739 SPS1_InvalidTrqDirection "False: Measured torque direction is the same as commanded 
+True:  Measured torque direction is not the same as commanded ";
+CM_ SG_ 2297364739 SPS1_MainCPU_WatchdogTimeout "False: Main CPU watchdog operating nominally
+True: Main CPU watchdog failure";
+CM_ SG_ 2297364739 SPS1_9VTempReference "False: 9V temperature reference is nominal
+True:  9V temperature reference in out of range";
+CM_ SG_ 2297364739 SPS1_MainCPU_Reset "False: Unexpected main CPU reset was not detected
+True:  Unexpected main CPU reset was detected";
+CM_ SG_ 2297364739 SPS1_SoftwareSafeState "Indicates the status of the software safe state output from the safety CPU";
+CM_ SG_ 2297364739 SPS1_HardwareSafeState "False: Hardware safe state is not enabled
+True:  Hardware safe state is enabled";
+CM_ SG_ 2297364739 SPS1_InverterSafeStateMode "Indicates the current inverter safe state mode. It is either 
+Normal Operation ( no safe state enabled)
+Active Short Circuit Upper (ASC-U)
+Active Short Circuit Lower (ASC-L)
+Six Switch Off (all drivers off)";
+CM_ SG_ 2297364739 SPS1_PowerOnSelfTestStatus "Indicates the status and result of Power-On-Self-Test";
+CM_ SG_ 2297364739 SPS1_SystemArmed "False: System not armed
+True:  System armed";
+CM_ SG_ 2297364739 SPS1_HardwareEnable "False: HW_ENABLE line is low
+True:  HW_ENABLE line is high";
+CM_ SG_ 2297364739 SPS1_CAN_SafetyMessageCounter "Increments (modulo 16) every time a new message is sent";
+CM_ SG_ 2297364739 SPS1_MessageCRC "Message CRC";
+CM_ BO_ 2364473603 "This message reports the safety processor system status
+
+The timing is user controlled by the ?Transmission Rate? box on the CANbus tab of the System Configuration section of the UQM Motor Controller software.
+
+The default value is 102 ms. ";
+CM_ SG_ 2364473603 SPS2_GateDvr1OutputError "Gate Driver 1 detected an output error";
+CM_ SG_ 2364473603 SPS2_GateDvr2OutputError "Gate Driver 2 detected an output error";
+CM_ SG_ 2364473603 SPS2_GateDvr3OutputError "Gate Driver 3 detected an output error";
+CM_ SG_ 2364473603 SPS2_GateDvr4OutputError "Gate Driver 4 detected an output error";
+CM_ SG_ 2364473603 SPS2_GateDvr5OutputError "Gate Driver 5 detected an output error";
+CM_ SG_ 2364473603 SPS2_GateDvr6OutputError "Gate Driver 6 detected an output error";
+CM_ SG_ 2364473603 SPS2_GateDvr1TemperatureError "Gate Driver 1 detected an internal temperature error";
+CM_ SG_ 2364473603 SPS2_GateDvr2TemperatureError "Gate Driver 2 detected an internal temperature error";
+CM_ SG_ 2364473603 SPS2_GateDvr3TemperatureError "Gate Driver 3 detected an internal temperature error";
+CM_ SG_ 2364473603 SPS2_GateDvr4TemperatureError "Gate Driver 4 detected an internal temperature error";
+CM_ SG_ 2364473603 SPS2_GateDvr5TemperatureError "Gate Driver 5 detected an internal temperature error";
+CM_ SG_ 2364473603 SPS2_GateDvr6TemperatureError "Gate Driver 6 detected an internal temperature error";
+CM_ SG_ 2364473603 SPS2_IGBT1DesatError "IGBT 1 Desaturation (over current) detected";
+CM_ SG_ 2364473603 SPS2_IGBT2DesatError "IGBT 2 Desaturation (over current) detected";
+CM_ SG_ 2364473603 SPS2_IGBT3DesatError "IGBT 3 Desaturation (over current) detected";
+CM_ SG_ 2364473603 SPS2_IGBT4DesatError "IGBT 4 Desaturation (over current) detected";
+CM_ SG_ 2364473603 SPS2_IGBT5DesatError "IGBT 5 Desaturation (over current) detected";
+CM_ SG_ 2364473603 SPS2_IGBT6DesatError "IGBT 6 Desaturation (over current) detected";
+CM_ SG_ 2364473603 SPS2_GateDvr1SecLVPS_Failure "Over/Under voltage detected on Gate Driver 1 Secondary side LV Power supply VCC2 or VEE2.";
+CM_ SG_ 2364473603 SPS2_GateDvr2SecLVPS_Failure "Over/Under voltage detected on Gate Driver 2 Secondary side LV Power supply VCC2 or VEE2.";
+CM_ SG_ 2364473603 SPS2_GateDvr3SecLVPS_Failure "Over/Under voltage detected on Gate Driver 3 Secondary side LV Power supply VCC2 or VEE2.";
+CM_ SG_ 2364473603 SPS2_GateDvr4SecLVPS_Failure "Over/Under voltage detected on Gate Driver 4 Secondary side LV Power supply VCC2 or VEE2.";
+CM_ SG_ 2364473603 SPS2_GateDvr5SecLVPS_Failure "Over/Under voltage detected on Gate Driver 5 Secondary side LV Power supply VCC2 or VEE2.";
+CM_ SG_ 2364473603 SPS2_GateDvr6SecLVPS_Failure "Over/Under voltage detected on Gate Driver 6 Secondary side LV Power supply VCC2 or VEE2.";
+CM_ SG_ 2364473603 SPS2_GateDvr1ShootThroughError "Gate Driver 1 detected Upper/Lower PWM signals both on at the same time";
+CM_ SG_ 2364473603 SPS2_GateDvr2ShootThroughError "Gate Driver 2 detected Upper/Lower PWM signals both on at the same time";
+CM_ SG_ 2364473603 SPS2_GateDvr3ShootThroughError "Gate Driver 3 detected Upper/Lower PWM signals both on at the same time";
+CM_ SG_ 2364473603 SPS2_GateDvr4ShootThroughError "Gate Driver 4 detected Upper/Lower PWM signals both on at the same time";
+CM_ SG_ 2364473603 SPS2_GateDvr5ShootThroughError "Gate Driver 5 detected Upper/Lower PWM signals both on at the same time";
+CM_ SG_ 2364473603 SPS2_GateDvr6ShootThroughError "Gate Driver 6 detected Upper/Lower PWM signals both on at the same time";
+CM_ SG_ 2364473603 SPS2_UpperGateDvrInternalError "Upper driver detected Internal error (one of Internal comms, VREG,Vref,CRC,BIST,PWM value comparison, secondary clk monitor)";
+CM_ SG_ 2364473603 SPS2_LowerGateDvrInternalError "Lower driver detected Internal error (one of Internal comms, VREG,Vref,CRC,BIST,PWM value comparison, secondary clk monitor)";
+CM_ SG_ 2364473603 SPS2_UpperGateDvrSPI_Error "Gate driver detected error in SPI communication (address, crc or clocking error)";
+CM_ SG_ 2364473603 SPS2_LowerGateDvrSPI_Error "Gate driver primary side Critical Error. Clock failure VCC1 over/under voltage, over temperature, VREG1 over voltage or over-current";
+CM_ SG_ 2364473603 SPS2_ReadyToEnable "False: Inverter is not ready to be enabled.
+True: Inverter is ready to be enabled.";
+CM_ SG_ 2364473603 SPS2_StatorTempSensor "Indicates that the stator temperature signal is shorted to a voltage rail (out of expected range)";
+CM_ SG_ 2364473603 SPS2_CAN_SafetyMessageCounter "Increments (modulo 16) every time a new message is sent";
+CM_ SG_ 2364473603 SPS2_MessageCRC "Message CRC";
+CM_ BO_ 2632909058 "This message provides the VCU with a regular watchdog message to check to see that the CAN Bus is still operational and indicate when the MCU detects a message timeout.
+
+The message is sent every 500 ms or when a timeout is detected.";
+CM_ SG_ 2632909058 WS_CmdWatchdogStatus "This byte is used to identify the outgoing message and is always set to the above value.";
+CM_ SG_ 2632909058 WS_A_ToggleBit "This bit toggles between 0 and 1 each time the Watchdog Status message is transmitted.";
+CM_ SG_ 2632909058 WS_B_SWSubVersion "These bits indicate the software release sub-version (i.e., the 1 at the end of V4.10.1).";
+CM_ SG_ 2632909058 WS_B_SWMinorVersion "These bits indicate the software minor version (i.e., the 10 in V4.10.1).";
+CM_ SG_ 2632909058 WS_B_SWMajorVersion "These bits indicate the software major version (i.e., the 4 in V4.10.1).";
+CM_ SG_ 2632909058 WS_C_CANVersion "These bits indicate the CAN version.";
+CM_ SG_ 2632909058 WS_Error "Indicates the status of the CAN communication. The inverter sets this bit if no valid CAN message is received for a period greater than the CAN watchdog timeout setting in System Configuration.";
+CM_ SG_ 2632909058 WS_RegenType "0 = Old Regen
+1 = New Regen";
+CM_ SG_ 2632909058 WS_SystemEnumeration "System Type Enumeration - see CAN Manual";
+CM_ BO_ 2632909313 "THIS MESSAGE IS NOT APPLICABLE FOR 1200G. DO NOT SEND.
+
+This message is used to signal to the MCU that the VCU is still active and to reset the MCU timer when a watchdog timeout occurs.
+
+The timing is user controlled by the ?Timeout Period? box and the ?Require Heartbeat Command? checkbox on the CANbus tab of the System Configuration section of the UQM Motor Controller software.
+
+If ?Require Heartbeat Command? is checked, the time between successive CANHeartbeatCommand commands may not exceed the value in the ?Timeout Period? field.
+
+If ?Require Heartbeat Command? is not checked, the command is only required when a watchdog error is detected.
+
+The default value is 996 ms.";
+CM_ SG_ 2632909313 CHC_HeartbeatIdentifier1 "Set to 0xA5A5 for Heartbeat Valid and Reset Timer
+Set to 0x00A6 for Reset Regen Switch (PPPro1xx systems only).";
+CM_ SG_ 2632909313 CHC_ClearWatchdogError "Set to 00 for Heartbeat Valid, set to 5A for Reset Timer
+Set to 00 for Reset Regen Switch (PPPro1xx systems only). 
+Note: it is the transition from 00 to 5A which will Reset Timer";
+CM_ SG_ 2632909313 CHC_HeartbeatIdentifier2 "Set to 00 for Heartbeat Valid and Reset Timer
+Set to 6A for Reset Regen Switch (PPPro1xx systems only).";
+CM_ BO_ 2565800194 "This message provides data on the temperature of the Inverter, Rotor, and Stator in degrees Celsius.
+
+The message is sent every 1000 ms";
+CM_ SG_ 2565800194 TM_Inverter "This is the maximum of the power switch temperatures being reported by the three power switch modules";
+CM_ SG_ 2565800194 TM_Rotor "This is the rotor temperature sensed by a thermistor located near the rotor";
+CM_ SG_ 2565800194 TM_Stator "This is the stator temperature sensed by a thermistor in the common";
+CM_ SG_ 2565800194 TM_IGBTJunction "Estimated coolant temperature based on internal parameters and current operating conditions";
+CM_ BO_ 2431582466 "This message provides the VCU with the system's torque and current limits";
+CM_ SG_ 2431582466 LM_MessageID "Mode Select";
+CM_ SG_ 2431582466 LM_MaxSinkCurrent "Maximum current the system is allowed to sink when in drive mode";
+CM_ SG_ 2431582466 LM_MaxSourceCurrent "Maximum current the system is allowed to source when in regen mode";
+CM_ SG_ 2431582466 LM_MaxRegenTorqueAllowed "Maximum torque the system is allowed to produce in regen";
+CM_ SG_ 2431582466 LM_MaxDriveTorqueAllowed "Maximum torque the system is allowed to produce in drive";
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType","NotUsed";
+BA_DEF_ SG_  "GenSigCycleTime" INT 0 0;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoMsgSendType","NotUsed";
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 0;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "GenSigSendType" "Cyclic";
+BA_DEF_DEF_  "GenSigCycleTime" 0;
+BA_DEF_DEF_  "GenMsgSendType" "Cyclic";
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "BusType" "";
+BA_ "BusType" "CAN";
+BA_ "GenMsgCycleTime" BO_ 2230255874 102;
+BA_ "GenSigCycleTime" SG_ 2230255874 AF_SafetyMode 102;
+BA_ "GenSigCycleTime" SG_ 2230255874 AF_Torque 102;
+BA_ "GenSigCycleTime" SG_ 2230255874 AF_Voltage 102;
+BA_ "GenSigCycleTime" SG_ 2230255874 AF_Current 102;
+BA_ "GenSigCycleTime" SG_ 2230255874 AF_Speed 102;
+BA_ "GenSigCycleTime" SG_ 2230255874 AFS_Torque 102;
+BA_ "GenSigCycleTime" SG_ 2230255874 AFS_Voltage 102;
+BA_ "GenSigCycleTime" SG_ 2230255874 AFS_Current 102;
+BA_ "GenSigCycleTime" SG_ 2230255874 AFS_Speed 102;
+BA_ "GenSigCycleTime" SG_ 2230255874 AFS_CRC 102;
+BA_ "GenMsgCycleTime" BO_ 2230255875 30;
+BA_ "GenMsgCycleTime" BO_ 2498691330 102;
+BA_ "GenMsgSendType" BO_ 2297364738 2;
+BA_ "GenMsgCycleTime" BO_ 2297364738 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_NotEnabled 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_NotEnabled 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_OverLegCurrent 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_OverLegCurrent 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_OverBusCurrent 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_OverBusCurrent 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_OverPhaseAdvance 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_OverPhaseAdvance 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_UnderVoltageWarning 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_UnderVoltageWarning 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_RotorOverTemp 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_RotorOverTemp 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_StatorOverTemp 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_StatorOverTemp 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_InverterOverTemp 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_InverterOverTemp 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_OverSpeedWarning 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_OverSpeedWarning 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_OverVoltageWarning 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_OverVoltageWarning 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_OverSpeedAlarm 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_OverSpeedAlarm 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_OverVoltageAlarm 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_OverVoltageAlarm 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_AdcCalProblem 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_AdcCalProblem 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_LimpHomeMode 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_LimpHomeMode 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_InvFaultOccurred 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_InvFaultOccurred 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_InverterFault 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_InverterFault 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_NotEnabled_Hist 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_NotEnabled_Hist 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_OverLegCurrent_Hist 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_OverLegCurrent_Hist 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_OverBusCurrent_Hist 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_OverBusCurrent_Hist 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_OverPhaseAdv_Hist 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_OverPhaseAdv_Hist 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_UnderVoltage_Hist 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_UnderVoltage_Hist 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_RotorOverTemp_Hist 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_RotorOverTemp_Hist 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_StatorOverTemp_Hist 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_StatorOverTemp_Hist 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_InvOverTemp_Hist 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_InvOverTemp_Hist 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_OverSpeedWarn_Hist 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_OverSpeedWarn_Hist 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_OverVoltWarn_Hist 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_OverVoltWarn_Hist 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_OverSpeedAlarm_Hist 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_OverSpeedAlarm_Hist 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_OverVoltAlarm_Hist 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_OverVoltAlarm_Hist 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_AdcCalProblem_Hist 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_AdcCalProblem_Hist 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_LimpHomeMode_Hist 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_LimpHomeMode_Hist 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_InvFaultOccurd_Hist 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_InvFaultOccurd_Hist 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_InverterFault_Hist 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_InverterFault_Hist 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_ForceVoltageControl 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_ForceVoltageControl 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_CANLimiting 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_CANLimiting 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_DisabledInMotion 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_DisabledInMotion 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_ABCPhaseOrder 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_ABCPhaseOrder 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_RegenSwOpen 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_RegenSwOpen 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_CurTripFltIbusIleg 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_CurTripFltIbusIleg 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_ActiveDampAccelLim 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_ActiveDampAccelLim 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_UsingRawSpeed 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_UsingRawSpeed 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_TurboMode 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_TurboMode 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_ForcedOpenLoop 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_ForcedOpenLoop 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_StallConditionsActive 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_StallConditionsActive 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_PhaseCurSenErr 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_PhaseCurSenErr 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_BadPositionSignal 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_BadPositionSignal 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_BadSwitch 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_BadSwitch 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_InvalidPowerSupply 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_InvalidPowerSupply 500;
+BA_ "GenSigSendType" SG_ 2297364738 SS_PowerSwOff 2;
+BA_ "GenSigCycleTime" SG_ 2297364738 SS_PowerSwOff 500;
+BA_ "GenMsgCycleTime" BO_ 2364473602 500;
+BA_ "GenMsgCycleTime" BO_ 2297364739 30;
+BA_ "GenMsgCycleTime" BO_ 2364473603 30;
+BA_ "GenMsgCycleTime" BO_ 2632909058 500;
+BA_ "GenSigCycleTime" SG_ 2632909058 WS_CmdWatchdogStatus 500;
+BA_ "GenSigCycleTime" SG_ 2632909058 WS_Error 500;
+BA_ "GenMsgCycleTime" BO_ 2565800194 1000;
+BA_ "GenSigCycleTime" SG_ 2565800194 TM_Inverter 1000;
+BA_ "GenSigCycleTime" SG_ 2565800194 TM_Rotor 1000;
+BA_ "GenSigCycleTime" SG_ 2565800194 TM_Stator 1000;
+VAL_ 2431582721 ALC_AccelerationLimits 0 "Acceleration Limits not Valid" 1 "Acceleration Limits Valid" ;
+VAL_ 2431582721 ALC_CurrentLimits 0 "Current Limits Not Valid" 1 "Current Limits Valid" ;
+VAL_ 2498691585 UC_ControlMode 0 "Undefined mode" 1 "Torque control mode" 2 "Speed control mode" 5 "Torque control mode - Safety" 6 "Speed control mode - Safety" ;
+VAL_ 2498691585 UC_UseRawSpeed 1 "Enable" 0 "Disable" ;
+VAL_ 2498691585 UC_DirOfRotation 1 "Forward" 0 "Reverse" ;
+VAL_ 2498691585 UCS_DirOfRotation 0 "Reverse" 1 "Forward" ;
+VAL_ 2498691585 UC_Enable 1 "Enable" 0 "Disable" ;
+VAL_ 2498691585 UC_DisableAccLim 1 "AccelLimitDisabled" 0 "AccelLimitEnabled" ;
+VAL_ 2297364738 SS_NotEnabled 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_OverLegCurrent 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_OverBusCurrent 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_OverPhaseAdvance 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_UnderVoltageWarning 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_RotorOverTemp 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_StatorOverTemp 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_InverterOverTemp 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_OverSpeedWarning 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_OverVoltageWarning 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_OverSpeedAlarm 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_OverVoltageAlarm 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_AdcCalProblem 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_LimpHomeMode 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_InvFaultOccurred 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_InverterFault 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_NotEnabled_Hist 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_OverLegCurrent_Hist 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_OverBusCurrent_Hist 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_OverPhaseAdv_Hist 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_UnderVoltage_Hist 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_RotorOverTemp_Hist 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_StatorOverTemp_Hist 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_InvOverTemp_Hist 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_OverSpeedWarn_Hist 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_OverVoltWarn_Hist 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_OverSpeedAlarm_Hist 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_OverVoltAlarm_Hist 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_AdcCalProblem_Hist 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_LimpHomeMode_Hist 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_InvFaultOccurd_Hist 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_InverterFault_Hist 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_ControlMode 0 "Undefined mode" 1 "Torque control mode" 2 "Speed control mode" 5 "Torque control mode - Safety" 6 "Speed control mode - Safety" ;
+VAL_ 2297364738 SS_ForceVoltageControl 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_CANLimiting 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_DisabledInMotion 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_ABCPhaseOrder 0 "CW" 1 "CCW" ;
+VAL_ 2297364738 SS_RegenSwOpen 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_CurTripFltIbusIleg 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_ActiveDampAccelLim 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_UsingRawSpeed 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_TurboMode 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_ForcedOpenLoop 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_StallConditionsActive 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_PhaseCurSenErr 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_BadPositionSignal 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_BadSwitch 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_InvalidPowerSupply 0 "False" 1 "True" ;
+VAL_ 2297364738 SS_PowerSwOff 0 "False" 1 "True" ;
+VAL_ 2364473602 FSS_SafeStateShutdown 0 "False" 1 "True" ;
+VAL_ 2364473602 FSS_SafeStateMonitor 0 "False" 1 "True" ;
+VAL_ 2364473602 FSS_InterprocessorCommsFault 0 "No error" 1 "CRC error" 2 "Packet timeout error" 3 "Safety CPU ALU logic error" ;
+VAL_ 2364473602 FSS_ActiveDischargeState 0 "Not Ready" 1 "Ready" 2 "Discharge In Progress" 3 "Discharge Complete" ;
+VAL_ 2364473602 FSS_SafetyCPU_WatchdogTimeout 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_HV_VoltageInRange 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_InvalidCAN_Message 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_InvalidCAN_Message_Hist 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_CAN_Timeout 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_CAN_Reserved 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_ADC_Validation 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_InterprocessorCommsFault 0 "No error" 1 "CRC error" 2 "Packet timeout error" 3 "Main CPU ALU logic error" ;
+VAL_ 2297364739 SPS1_StackOverflow 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_FlowControl 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_ISR_Monitor 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_RegisterMonitor 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_RAM_Code 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_Overvoltage 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_Overvoltage_Hist 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_Undervoltage 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_Undervoltage_Hist 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_12V_Rail 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_Backup12V_Rail 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_CT_Fault 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_HV_BusMonitor 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_CT_VoltageRef 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_IabcSum 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_ExcitationAmp 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_Resolver 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_ResolverPosition 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_RotorTempSensor 0 "Nominal" 1 "Failed Short" 2 "Failed Open" 3 "Wrong Value" ;
+VAL_ 2297364739 SPS1_UpperGateDriver 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_LowerGateDriver 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_ExcessiveTorque 0 "Torque is less than or equal to commanded torque" 1 "Excessive motoring torque detected" 2 "Excessive regen torque detected" 3 "Reserved" ;
+VAL_ 2297364739 SPS1_InvalidTrqDirection 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_MainCPU_WatchdogTimeout 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_9VTempReference 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_MainCPU_Reset 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_SoftwareSafeState 0 "Normal" 2 "Software Controlled SSO" 3 "Software Controlled ASC" ;
+VAL_ 2297364739 SPS1_HardwareSafeState 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_InverterSafeStateMode 0 "Normal" 1 "ASC-U" 2 "ASC-L" 3 "SSO" ;
+VAL_ 2297364739 SPS1_PowerOnSelfTestStatus 0 "Success" 1 "Running" 2 "HV Backup Supply Error" 3 "Primary Power Supply Diode Output Error 1" 4 "R2D BIST Error 1" 5 "Gate Driver Address Error" 6 "Gate Driver BIST Error" 7 "System Fault Latch Error 1" 8 "ASC Lower Error" 9 "ASC Upper Error 1" 10 "SSO Error" 11 "Program Memory Flash Check Error" 12 "App Compatibility Check Error" 13 "EEPROM Header Consistency Check Error" 14 "SRAM Check Error" 15 "Wait for Main CPU Error" 16 "Verify Main CPU Version Error" 17 "Final System Arm Error" 18 "ADC Data Consistency Check Error 1" 19 "ADC Calibration Sanity Check Error" 20 "Event Log Header Version Check Error" 21 "Manufacturing Header Consistency Check Error" 22 "Gate Driver Init Error" 23 "Gate Driver BIST Error 2" 24 "Gate Driver BIST Error 3" 25 "Gate Driver BIST Error 4" 26 "Gate Driver BIST Error 5" 27 "Gate Driver BIST Error 6" 28 "Gate Driver BIST Error 7" 29 "Gate Driver BIST Error 8" 30 "Gate Driver BIST Error 9" 31 "Gate Driver BIST Error 10" 32 "Gate Driver BIST Error 11" 33 "Gate Driver BIST Error 12" 34 "Gate Driver BIST Error 13" 35 "Gate Driver BIST Error 14" 36 "Hardware Enable Timeout Error" 37 "Handshake Failure 1" 38 "High Voltage Timeout Failure" 39 "Primary Power Supply Diode Output Error 2" 40 "Primary Power Supply Diode Output Error 3" 41 "Primary Power Supply Diode Output Error 4" 42 "Primary Power Supply Diode Output Error 5" 43 "R2D BIST Error 2" 44 "R2D BIST Error 3" 45 "R2D BIST Error 4" 46 "System Fault Latch Error 2" 47 "System Fault Latch Error 3" 48 "System Fault Latch Error 4" 49 "System Fault Latch Error 5" 50 "System Fault Latch Error 6" 51 "System Fault Latch Error 7" 52 "ASC Upper Error 2" 53 "ASC Upper Error 3" 54 "ASC Upper Error 4" 55 "ASC Upper Error 5" 56 "ADC Data Consistency Check Error 2" 57 "Handshake Failure 2" 58 "Handshake Failure 3" 59 "Handshake Failure 4" 60 "Handshake Failure 5" 61 "Handshake Failure 6" 62 "Handshake Failure 7" 63 "System Fault Latch Error 8" ;
+VAL_ 2297364739 SPS1_SystemArmed 0 "False" 1 "True" ;
+VAL_ 2297364739 SPS1_HardwareEnable 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr1OutputError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr2OutputError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr3OutputError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr4OutputError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr5OutputError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr6OutputError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr1TemperatureError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr2TemperatureError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr3TemperatureError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr4TemperatureError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr5TemperatureError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr6TemperatureError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_IGBT1DesatError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_IGBT2DesatError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_IGBT3DesatError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_IGBT4DesatError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_IGBT5DesatError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_IGBT6DesatError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr1SecLVPS_Failure 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr2SecLVPS_Failure 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr3SecLVPS_Failure 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr4SecLVPS_Failure 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr5SecLVPS_Failure 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr6SecLVPS_Failure 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr1ShootThroughError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr2ShootThroughError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr3ShootThroughError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr4ShootThroughError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr5ShootThroughError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_GateDvr6ShootThroughError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_UpperGateDvrInternalError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_LowerGateDvrInternalError 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_UpperGateDvrSPI_Error 0 "No Error" 1 "Comms error detected by CPU (CRC or content)" 2 "Comms error detected by CPU (timeout - unresponsive device)" 3 "Comms error detected by Gate Drive (CRC or content)" ;
+VAL_ 2364473603 SPS2_LowerGateDvrSPI_Error 0 "No Error" 1 "Comms error detected by CPU (CRC or content)" 2 "Comms error detected by CPU (timeout - unresponsive device)" 3 "Comms error detected by Gate Drive (CRC or content)" ;
+VAL_ 2364473603 SPS2_ReadyToEnable 0 "False" 1 "True" ;
+VAL_ 2364473603 SPS2_StatorTempSensor 0 "Nominal" 1 "Failed Short" 2 "Failed Open" 3 "Wrong Value" ;
+VAL_ 2632909058 WS_Error 1 "CAN watchdog error occurred" 0 "No CAN watchdog error" ;
+

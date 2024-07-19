@@ -1,8 +1,24 @@
 
 # CAN Log Parser
 
-![Build Status](https://github.com/your-username/CAN-Log-Parser/actions/workflows/ci.yml/badge.svg)
-![Code Quality](https://img.shields.io/badge/code%20quality-A-green)
+# CAN-Log-Parser
+
+![CI Workflow](https://github.com/<your-username>/CAN-Log-Parser/actions/workflows/ci.yml/badge.svg)
+[![codecov](https://codecov.io/gh/<your-username>/CAN-Log-Parser/branch/main/graph/badge.svg)](https://codecov.io/gh/<your-username>/CAN-Log-Parser)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/<your-project-token>)](https://www.codacy.com/gh/<your-username>/CAN-Log-Parser/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=<your-username>/CAN-Log-Parser&amp;utm_campaign=Badge_Grade)
+
+This project is a CAN log parser that parses DBC files and CAN log files, and plots signal values over time.
+
+## Features
+- Parse DBC files
+- Parse CAN log files
+- Plot signal values
+
+## Usage
+### Parsing DBC Files
+```bash
+python src/parse_dbc.py path_to_dbc_file
+
 
 This project is a tool to parse DBC formatted CAN log files and plot the signals.
 
