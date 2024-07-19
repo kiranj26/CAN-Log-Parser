@@ -1,5 +1,6 @@
 import cantools
 import sys
+import os
 import matplotlib.pyplot as plt
 import argparse
 
@@ -98,7 +99,7 @@ def plot_signals(parsed_data, signal_name, start_time, end_time):
         print(f"No data found for signal: {signal_name}")
         return
 
-    plt.figure(figsize=(30, 15))  # Adjust the size as needed
+    plt.figure(figsize=(15, 5))  # Adjust the size as needed
     plt.plot(timestamps, values)
     plt.xlabel('Time (s)')
     plt.ylabel('Value')
@@ -120,12 +121,9 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    if args.mode == "test":
-        dbc_file = "C:\\Github\\CAN-Log-Parser\\test\\data\\test.dbc"
-        log_file = "C:\\Github\\CAN-Log-Parser\\test\\data\\test_log.txt"
-    elif args.mode == "main":
-        dbc_file = "C:\\Github\\CAN-Log-Parser\\data\\1200G_CAN-DBC_v01.01.00.dbc"
-        log_file = "C:\\Github\\CAN-Log-Parser\\data\\DMW_Message_Timeout_CAN_Log.txt"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    dbc_file = os.path.join(script_dir, "..", "data", "test.dbc")
+    log_file = os.path.join(script_dir, "..", "data", "test_log.txt")
 
     db = parse_dbc(dbc_file)
     if db:
