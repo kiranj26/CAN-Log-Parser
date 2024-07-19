@@ -3,9 +3,11 @@
 
 # CAN-Log-Parser
 
-![CI Workflow](https://github.com/<your-username>/CAN-Log-Parser/actions/workflows/ci.yml/badge.svg)
-[![codecov](https://codecov.io/gh/<your-username>/CAN-Log-Parser/branch/main/graph/badge.svg)](https://codecov.io/gh/<your-username>/CAN-Log-Parser)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/<your-project-token>)](https://www.codacy.com/gh/<your-username>/CAN-Log-Parser/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=<your-username>/CAN-Log-Parser&amp;utm_campaign=Badge_Grade)
+![Build Status](https://github.com/yourusername/CAN-Log-Parser/actions/workflows/ci.yml/badge.svg)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/your_project_token)](https://www.codacy.com/gh/yourusername/CAN-Log-Parser/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=yourusername/CAN-Log-Parser&amp;utm_campaign=Badge_Grade)
+![Flake8 Linting](https://img.shields.io/badge/flake8-linting-brightgreen)
+![Python Version](https://img.shields.io/badge/python-3.12-blue)
+![License](https://img.shields.io/github/license/yourusername/CAN-Log-Parser)
 
 This project is a CAN log parser that parses DBC files and CAN log files, and plots signal values over time.
 
