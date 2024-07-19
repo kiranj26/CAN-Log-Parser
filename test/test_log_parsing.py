@@ -39,6 +39,8 @@ def process_message(db, message_lines, parsed_data):
         main_line = message_lines[0].split()
         # print(f"Main line parts: {main_line}")  # Commented for clean output
         can_id = main_line[2]
+        # if can_id in ["00000000", "0000040A"]:
+        #     return
         message_name = main_line[5]
         timestamp = main_line[6]
         direction = main_line[7]
@@ -46,6 +48,7 @@ def process_message(db, message_lines, parsed_data):
         signals = []
 
         for signal_line in message_lines[1:]:
+            # print("Signal Line ---- ", signal_line)
             parts = signal_line.split()
             signal_name = parts[1]
             signal_value = parts[2]
@@ -58,9 +61,10 @@ def process_message(db, message_lines, parsed_data):
             "direction": direction,
             "signals": signals
         })
-        
+            
     except Exception as e:
-        print(f"Error processing message: {e}")
+        print(f"Error processing message: {e}, for CAN ID (Error Frames): {can_id}")
+        return
 
 def print_parsed_data(parsed_data):
     for data in parsed_data:
@@ -88,3 +92,4 @@ if __name__ == "__main__":
     db = parse_dbc(dbc_file)
     if db:
         parse_log(db, log_file)
+        print("Done parsing log file")
