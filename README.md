@@ -4,7 +4,7 @@
 # CAN-Log-Parser
 
 ![Build Status](https://github.com/kiranj26/CAN-Log-Parser/actions/workflows/ci.yml/badge.svg)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/your_project_token)](https://www.codacy.com/gh/kiranj26/CAN-Log-Parser/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kiranj26/CAN-Log-Parser&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/4a476526a37145f2922f58a6f903ff27)](https://app.codacy.com/gh/kiranj26/CAN-Log-Parser/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 ![Flake8 Linting](https://img.shields.io/badge/flake8-linting-brightgreen)
 ![Python Version](https://img.shields.io/badge/python-3.12-blue)
 ![License](https://img.shields.io/github/license/kiranj26/CAN-Log-Parser)
