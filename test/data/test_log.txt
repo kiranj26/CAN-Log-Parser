@@ -1,89 +1,89 @@
 WinNo  Identifier Flg   Dlc   Name                                                    Time     Dir
-CAN 1    000064   X       8   AccelerationCommandTest          44709.992868 R
+CAN 1    000064   X       8   VehicleNode AccelerationCommand_ECU.AccelerationCommandTest          44709.992868 R
                         -> ACC_AccelerationTest                  0.0000 Bool
                         -> ACC_CurrentTest                       1.0000 Bool
                         -> ACC_SurgeTest                     12345.0000 RPM
                         -> ACC_AccelTest                     67890.0000 RPM/sec
                         -> ACC_MaxCurrentTest                 100.0000 Amp
-CAN 1    000065   X       8   FeedbackTest                     44710.002938 R
+CAN 1    000065   X       8   VehicleNode Feedback_ECU.FeedbackTest                     44710.002938 R
                         -> FB_SafetyModeTest                     1.0000 Enum
                         -> FB_TorqueTest                     2345.6000 Nm
                         -> FB_VoltageTest                    3456.7000 Volts
                         -> FB_CurrentTest                    4567.8000 Amps
                         -> FB_SpeedTest                      5678.9000 rpm
-CAN 1    000066   X       8   SafetyFeedbackTest               44710.012918 R
+CAN 1    000066   X       8   VehicleNode SafetyFeedback_ECU.SafetyFeedbackTest               44710.012918 R
                         -> SAF_SafetyModeTest                    0.0000 Enum
                         -> SAF_TorqueTest                      567.0000 Nm
                         -> SAF_VoltageTest                   6789.0000 Volts
                         -> SAF_CurrentTest                   7890.1000 Amps
                         -> SAF_SpeedTest                    8901.2000 rpm
-CAN 1    000067   X       8   CommandTest                      44710.022908 R
+CAN 1    000067   X       8   VehicleNode Command_ECU.CommandTest                      44710.022908 R
                         -> CMD_ControlModeTest                    2.0000 Enum
                         -> CMD_CommandCounterTest                 3.0000 Integer
                         -> CMD_ActiveDischargeTest                0.0000 Bool
                         -> CMD_UseRawSpeedTest                    1.0000 Bool
                         -> CMD_DirOfRotationTest                  0.0000 Enum
-CAN 1    000068   X       8   StatusTest                       44710.032888 R
+CAN 1    000068   X       8   VehicleNode Status_ECU.StatusTest                       44710.032888 R
                         -> STS_NotEnabledTest                    1.0000 Bool
                         -> STS_OverCurrentTest                   0.0000 Bool
                         -> STS_OverBusTest                       1.0000 Bool
                         -> STS_OverPhaseTest                     0.0000 Bool
                         -> STS_UnderVoltageTest                  1.0000 Bool
-CAN 1    000064   X       8   AccelerationCommandTest          44710.042868 R
+CAN 1    000064   X       8   VehicleNode AccelerationCommand_ECU.AccelerationCommandTest          44710.042868 R
                         -> ACC_AccelerationTest                  1.0000 Bool
                         -> ACC_CurrentTest                       0.0000 Bool
                         -> ACC_SurgeTest                     54321.0000 RPM
                         -> ACC_AccelTest                     98765.0000 RPM/sec
                         -> ACC_MaxCurrentTest                 150.0000 Amp
-CAN 1    000065   X       8   FeedbackTest                     44710.052938 R
+CAN 1    000065   X       8   VehicleNode Feedback_ECU.FeedbackTest                     44710.052938 R
                         -> FB_SafetyModeTest                     0.0000 Enum
                         -> FB_TorqueTest                     1234.5000 Nm
                         -> FB_VoltageTest                    4567.8000 Volts
                         -> FB_CurrentTest                    5678.9000 Amps
                         -> FB_SpeedTest                      6789.0000 rpm
-CAN 1    000066   X       8   SafetyFeedbackTest               44710.062918 R
+CAN 1    000066   X       8   VehicleNode SafetyFeedback_ECU.SafetyFeedbackTest               44710.062918 R
                         -> SAF_SafetyModeTest                    1.0000 Enum
                         -> SAF_TorqueTest                      890.0000 Nm
                         -> SAF_VoltageTest                   5678.0000 Volts
                         -> SAF_CurrentTest                   6789.1000 Amps
                         -> SAF_SpeedTest                    7890.2000 rpm
-CAN 1    000067   X       8   CommandTest                      44710.072908 R
+CAN 1    000067   X       8   VehicleNode Command_ECU.CommandTest                      44710.072908 R
                         -> CMD_ControlModeTest                    3.0000 Enum
                         -> CMD_CommandCounterTest                 4.0000 Integer
                         -> CMD_ActiveDischargeTest                1.0000 Bool
                         -> CMD_UseRawSpeedTest                    0.0000 Bool
                         -> CMD_DirOfRotationTest                  1.0000 Enum
-CAN 1    000068   X       8   StatusTest                       44710.082888 R
+CAN 1    000068   X       8   VehicleNode Status_ECU.StatusTest                       44710.082888 R
                         -> STS_NotEnabledTest                    0.0000 Bool
                         -> STS_OverCurrentTest                   1.0000 Bool
                         -> STS_OverBusTest                       0.0000 Bool
                         -> STS_OverPhaseTest                     1.0000 Bool
                         -> STS_UnderVoltageTest                  0.0000 Bool
-CAN 1    000064   X       8   AccelerationCommandTest          44710.092868 R
+CAN 1    000064   X       8   VehicleNode AccelerationCommand_ECU.AccelerationCommandTest          44710.092868 R
                         -> ACC_AccelerationTest                  2.0000 Bool
                         -> ACC_CurrentTest                       2.0000 Bool
                         -> ACC_SurgeTest                     54322.0000 RPM
                         -> ACC_AccelTest                     98766.0000 RPM/sec
                         -> ACC_MaxCurrentTest                 151.0000 Amp
-CAN 1    000065   X       8   FeedbackTest                     44710.102938 R
+CAN 1    000065   X       8   VehicleNode Feedback_ECU.FeedbackTest                     44710.102938 R
                         -> FB_SafetyModeTest                     1.0000 Enum
                         -> FB_TorqueTest                     2346.5000 Nm
                         -> FB_VoltageTest                    4568.8000 Volts
                         -> FB_CurrentTest                    5679.9000 Amps
                         -> FB_SpeedTest                      6780.0000 rpm
-CAN 1    000066   X       8   SafetyFeedbackTest               44710.112918 R
+CAN 1    000066   X       8   VehicleNode SafetyFeedback_ECU.SafetyFeedbackTest               44710.112918 R
                         -> SAF_SafetyModeTest                    0.0000 Enum
                         -> SAF_TorqueTest                      569.0000 Nm
                         -> SAF_VoltageTest                   6782.0000 Volts
                         -> SAF_CurrentTest                   7892.1000 Amps
                         -> SAF_SpeedTest                    8912.2000 rpm
-CAN 1    000067   X       8   CommandTest                      44710.122908 R
+CAN 1    000067   X       8   VehicleNode Command_ECU.CommandTest                      44710.122908 R
                         -> CMD_ControlModeTest                    2.0000 Enum
                         -> CMD_CommandCounterTest                 5.0000 Integer
                         -> CMD_ActiveDischargeTest                0.0000 Bool
                         -> CMD_UseRawSpeedTest                    1.0000 Bool
                         -> CMD_DirOfRotationTest                  0.0000 Enum
-CAN 1    000068   X       8   StatusTest                       44710.132888 R
+CAN 1    000068   X       8   VehicleNode Status_ECU.StatusTest                       44710.132888 R
                         -> STS_NotEnabledTest                    1.0000 Bool
                         -> STS_OverCurrentTest                   0.0000 Bool
                         -> STS_OverBusTest                       1.0000 Bool

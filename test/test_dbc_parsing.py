@@ -19,13 +19,12 @@ if __name__ == "__main__":
         sys.exit(1)
     
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    data_dir = os.path.join(script_dir, '..', 'data')
     
     dbc_type = sys.argv[1]
     if dbc_type == 'test':
-        dbc_file_path = os.path.join(data_dir, 'test.dbc')
+        dbc_file_path = os.path.join(script_dir, 'data', 'test.dbc')
     elif dbc_type == 'main':
-        dbc_file_path = os.path.join(data_dir, '1200G_CAN-DBC_v01.01.00.dbc')
+        dbc_file_path = os.path.join(script_dir, '..', 'data', '1200G_CAN-DBC_v01.01.00.dbc')
     else:
         print("Invalid argument. Use 'test' or 'main'.")
         sys.exit(1)

@@ -41,9 +41,9 @@ def process_message(db, message_lines, parsed_data):
         can_id = main_line[2]
         # if can_id in ["00000000", "0000040A"]:
         #     return
-        message_name = main_line[5]
-        timestamp = main_line[6]
-        direction = main_line[7]
+        ecu_name, message_name = main_line[6].split('.')
+        timestamp = main_line[7]
+        direction = main_line[8]
 
         signals = []
 
