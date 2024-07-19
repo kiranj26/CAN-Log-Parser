@@ -97,6 +97,21 @@ These commands will parse the test.dbc and test_log.txt files located in the dat
 
 ## Output Screenshots
 
-# Contact
+## Contributions
 
-You can download this README file by copying the content above and saving it as `README.md` in your repository folder. Make sure to replace the placeholder paths for the screenshots with the actual paths once you have the images ready.
+Feel free to contribute by adding new algorithms or improving the existing implementations. Please follow the contribution guidelines outlined in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
+## Contact
+
+Kiran Jojare  
+Embedded Software Engineer  
+Phone: 720-645-6212  
+Email: kijo7257@colorado.edu
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+---
+
+Happy Coding! 🚀
