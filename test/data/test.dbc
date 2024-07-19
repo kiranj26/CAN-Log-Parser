@@ -1,0 +1,101 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: Node1 Node2 Node3
+
+
+BO_ 100 AccelerationCommandTest: 8 Node1
+ SG_ ACC_AccelerationTest : 0|1@1+ (1,0) [0|1] "Bool"  Node1,Node2
+ SG_ ACC_CurrentTest : 1|1@1+ (1,0) [0|1] "Bool"  Node2,Node1
+ SG_ ACC_SurgeTest : 16|16@1+ (1,0) [0|32767] "RPM"  Node1,Node2
+ SG_ ACC_AccelTest : 32|16@1+ (1,0) [0|32767] "RPM/sec"  Node1,Node2
+ SG_ ACC_MaxCurrentTest : 48|8@1+ (5,0) [0|1275] "Amp"  Node1,Node2
+
+BO_ 101 FeedbackTest: 8 Node2
+ SG_ FB_SafetyModeTest : 0|1@1+ (1,0) [0|1] "Enum"  Node1,Node2
+ SG_ FB_TorqueTest : 1|15@1+ (0.2,-3212.8) [-3212.8|3212.8] "Nm"  Node2,Node1
+ SG_ FB_VoltageTest : 16|16@1+ (0.1,-3212.8) [-3212.8|3212.8] "Volts"  Node2,Node1
+ SG_ FB_CurrentTest : 32|16@1+ (0.1,-3212.8) [-3212.8|3212.8] "Amps"  Node2,Node1
+ SG_ FB_SpeedTest : 48|16@1+ (0.5,-16064) [-16064|16064] "rpm"  Node2,Node1
+
+BO_ 102 SafetyFeedbackTest: 8 Node3
+ SG_ SAF_SafetyModeTest : 0|1@1+ (1,0) [0|1] "Enum"  Node1,Node3
+ SG_ SAF_TorqueTest : 1|12@1+ (1,-2048) [-2048|2047] "Nm"  Node1,Node3
+ SG_ SAF_VoltageTest : 13|12@1+ (1,0) [0|4095] "Volts"  Node1,Node3
+ SG_ SAF_CurrentTest : 25|12@1+ (1,-2048) [-2048|2047] "Amps"  Node1,Node3
+ SG_ SAF_SpeedTest : 37|15@1+ (1,-16384) [-16384|16383] "rpm"  Node1,Node3
+
+BO_ 103 CommandTest: 8 Node1
+ SG_ CMD_ControlModeTest : 0|4@1+ (1,0) [0|6] "Enum"  Node2,Node1,Node3
+ SG_ CMD_CommandCounterTest : 4|4@1+ (1,0) [0|15] "Integer"  Node2,Node1,Node3
+ SG_ CMD_ActiveDischargeTest : 8|1@1+ (1,0) [0|1] "Bool"  Node3,Node2
+ SG_ CMD_UseRawSpeedTest : 10|1@1+ (1,0) [0|1] "Bool"  Node1,Node2,Node3
+ SG_ CMD_DirOfRotationTest : 11|1@1+ (1,0) [0|1] "Enum"  Node1,Node2,Node3
+
+BO_ 104 StatusTest: 8 Node2
+ SG_ STS_NotEnabledTest : 0|1@1+ (1,0) [0|1] "Bool"  Node2,Node1
+ SG_ STS_OverCurrentTest : 1|1@1+ (1,0) [0|1] "Bool"  Node2,Node1
+ SG_ STS_OverBusTest : 2|1@1+ (1,0) [0|1] "Bool"  Node2,Node1
+ SG_ STS_OverPhaseTest : 3|1@1+ (1,0) [0|1] "Bool"  Node2,Node1
+ SG_ STS_UnderVoltageTest : 4|1@1+ (1,0) [0|1] "Bool"  Node2,Node1
+
+CM_ "Test CAN database definition.";
+CM_ BU_ Node1 "Test Node 1";
+CM_ BU_ Node2 "Test Node 2";
+CM_ BU_ Node3 "Test Node 3";
+CM_ BO_ 100 "Test command message for acceleration limits.";
+CM_ SG_ 100 ACC_AccelerationTest "Test signal for updating acceleration limits.";
+CM_ SG_ 100 ACC_CurrentTest "Test signal for updating current limits.";
+CM_ SG_ 100 ACC_SurgeTest "Test signal for controlling surges in acceleration.";
+CM_ SG_ 100 ACC_AccelTest "Test signal for maximum rate of acceleration.";
+CM_ SG_ 100 ACC_MaxCurrentTest "Test signal for maximum current in drive mode.";
+
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType","NotUsed";
+BA_DEF_ SG_  "GenSigCycleTime" INT 0 0;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoMsgSendType","NotUsed";
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 0;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "GenSigSendType" "Cyclic";
+BA_DEF_DEF_  "GenSigCycleTime" 0;
+BA_DEF_DEF_  "GenMsgSendType" "Cyclic";
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "BusType" "";
+BA_ "BusType" "CAN";
+BA_ "GenMsgCycleTime" BO_ 101 100;
+BA_ "GenSigCycleTime" SG_ 101 FB_SafetyModeTest 100;
+BA_ "GenSigCycleTime" SG_ 101 FB_TorqueTest 100;
+BA_ "GenSigCycleTime" SG_ 101 FB_VoltageTest 100;
+BA_ "GenSigCycleTime" SG_ 101 FB_CurrentTest 100;
+BA_ "GenSigCycleTime" SG_ 101 FB_SpeedTest 100;

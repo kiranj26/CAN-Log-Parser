@@ -1,28 +1,13 @@
-CAN 1    14EF6A5A X       8   Safety Processor_toyota_a.UniversalCommand          44709.992868 R
-                        -> UC_ControlMode                          5.0000 Enum
-                        -> UC_CommandCounter                       5.0000 Integer
-                        -> UC_ActiveDischarge                      0.0000 Bool
-                        -> UC_UseRawSpeed                          0.0000 Bool
-                        -> UCS_DirOfRotation                       1.0000 Enum
-                        -> UC_Enable                               1.0000 Bool
-CAN 1    14EF6A5A X       8   Safety Processor_toyota_a.UniversalCommand          44710.002938 R
-                        -> UC_ControlMode                          6.0000 Enum
-                        -> UC_CommandCounter                       6.0000 Integer
-                        -> UC_ActiveDischarge                      1.0000 Bool
-                        -> UC_UseRawSpeed                          1.0000 Bool
-                        -> UCS_DirOfRotation                       0.0000 Enum
-                        -> UC_Enable                               0.0000 Bool
-CAN 1    14EF6A5A X       8   Safety Processor_toyota_a.UniversalCommand          44710.012918 R
-                        -> UC_ControlMode                          7.0000 Enum
-                        -> UC_CommandCounter                       7.0000 Integer
-                        -> UC_ActiveDischarge                      0.0000 Bool
-                        -> UC_UseRawSpeed                          1.0000 Bool
-                        -> UCS_DirOfRotation                       1.0000 Enum
-                        -> UC_Enable                               1.0000 Bool
-CAN 1    14EF6A5A X       8   Safety Processor_toyota_a.UniversalCommand          44710.022898 R
-                        -> UC_ControlMode                          5.0000 Enum
-                        -> UC_CommandCounter                       8.0000 Integer
-                        -> UC_ActiveDischarge                      1.0000 Bool
-                        -> UC_UseRawSpeed                          0.0000 Bool
-                        -> UCS_DirOfRotation                       0.0000 Enum
-                        -> UC_Enable                               0.0000 Bool
+WinNo  Identifier Flg   Dlc   Name                                                    Time     Dir
+CAN 1    123456 X       8   ECU1.Message1                                      44709.992868 R
+                        -> Signal1                                100.0000 units
+                        -> Signal2                                200.0000 units
+CAN 1    123456 X       8   ECU1.Message1                                      44710.002938 R
+                        -> Signal1                                110.0000 units
+                        -> Signal2                                210.0000 units
+CAN 1    654321 X       8   ECU1.Message2                                      44710.012918 R
+                        -> Signal3                                300.0000 units
+                        -> Signal4                                400.0000 units
+CAN 1    654321 X       8   ECU1.Message2                                      44710.022908 R
+                        -> Signal3                                310.0000 units
+                        -> Signal4                                410.0000 units

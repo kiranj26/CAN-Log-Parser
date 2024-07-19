@@ -1,7 +1,0 @@
-BO_ 496086938 UniversalCommand: 8 SafetyProcessor
- SG_ UC_ControlMode : 0|4@1+ (1,0) [0|15] ""  SafetyProcessor
- SG_ UC_CommandCounter : 4|4@1+ (1,0) [0|15] ""  SafetyProcessor
- SG_ UC_ActiveDischarge : 8|1@1+ (1,0) [0|1] ""  SafetyProcessor
- SG_ UC_UseRawSpeed : 9|1@1+ (1,0) [0|1] ""  SafetyProcessor
- SG_ UCS_DirOfRotation : 10|2@1+ (1,0) [0|3] ""  SafetyProcessor
- SG_ UC_Enable : 12|1@1+ (1,0) [0|1] ""  SafetyProcessor
