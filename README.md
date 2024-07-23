@@ -133,7 +133,10 @@ The GUI built using PyQt5 allows users to interactively select and plot CAN sign
   python gui/gui_main.py
   ```
 
-### GUI Working GIF
+### GUI Working GIF    
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/99054b12-e28b-470d-a788-66f846a47e8b" width="600" height="400" />
+</div>
 
 ## Contributions
 
