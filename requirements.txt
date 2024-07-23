@@ -1,2 +1,3 @@
 cantools
 matplotlib
+PyQt5
