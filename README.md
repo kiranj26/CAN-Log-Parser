@@ -101,9 +101,39 @@ These commands will parse the test.dbc and test_log.txt files located in the dat
 </div>
 
 
+## GUI Features
+### Overview
 
+The GUI built using PyQt5 allows users to interactively select and plot CAN signals from the log file.
 
+### Features
 
+- **Multiple Plot Options**: Select which subplot to plot the signals in, allowing for easy comparison of multiple signals.
+- **Data Filtering**: Filter the data to be plotted by selecting specific start and end times.
+- **Advanced Plot Customization**: Customize the plot's appearance, including zooming, panning, and adjusting plot sizes.
+- **Data Export and Import**: Export the plotted data to CSV or import previously saved data for further analysis.
+- **Interactive Features**: Zoom, pan, and interact with the plot to analyze specific sections of the data.
+- **Annotations and Markers**: Add annotations and markers to the plot for highlighting important events.
+- **User-Friendly Interface**: Easy-to-use interface with buttons for loading files, plotting signals, and clearing plots.
+- **Enhanced Signal Selection**: Select and clear signals with ease, allowing for dynamic plotting.
+
+### Usage
+
+- Run the GUI application:
+  ```
+  python gui/gui_main.py
+  ```
+- Load the DBC and log files using the provided buttons.
+- Select the signals you want to plot from the list.
+- Click the "Plot Signals" button to visualize the selected signals.
+- Use the interactive features to zoom, pan, and analyze the plots.
+
+### Example Command
+  ```
+  python gui/gui_main.py
+  ```
+
+### GUI Working GIF
 
 ## Contributions
 
