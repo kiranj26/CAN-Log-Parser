@@ -43,13 +43,13 @@ All required packages are listed in the `requirements.txt` file.
 2. Run the main script with the appropriate arguments:
 
     ```bash
-    python src/main.py test SAF_SpeedTest
+    python src/main.py PATH_TO_LOG/example.txt PATH_TO_DBC/example.dbc SignalName StartTime EndTime
     ```
 
-    or
+Example:
 
     ```bash
-    python src/main.py test SAF_SpeedTest 43.2 45.6
+    python src/main.py ../data/test_log.txt ../data/test.dbc SAF_SpeedTest 43.2 45.6
     ```
 
 ## Repository Structure
