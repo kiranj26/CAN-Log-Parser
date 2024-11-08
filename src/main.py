@@ -31,6 +31,8 @@ import sys
 import matplotlib.pyplot as plt
 import argparse
 
+from utils import validate_file
+
 def parse_dbc(file_path):
     """
     @brief Parse the DBC file to get CAN message definitions.
@@ -171,7 +173,9 @@ def plot_signals(parsed_data, signal_name, start_time, end_time):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Plot CAN signal data")
-    parser.add_argument('mode', choices=['test', 'main'], help="Mode to run the script in")
+    #parser.add_argument('mode', choices=['test', 'main'], help="Mode to run the script in")     # TODO: Not used for anything rn, see if can remove
+    parser.add_argument('log', type=str, help="Path to CAN log file")
+    parser.add_argument('dbc', type=str, help="Path to DBC file")
     parser.add_argument('signal', type=str, help="Signal name to plot")
     parser.add_argument('start', type=float, nargs='?', default=None, help="Start time for the plot")
     parser.add_argument('end', type=float, nargs='?', default=None, help="End time for the plot")
@@ -180,8 +184,8 @@ if __name__ == "__main__":
 
     # Determine the paths to the DBC and log files based on the mode
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    dbc_file = os.path.join(script_dir, "..", "data", "test.dbc")
-    log_file = os.path.join(script_dir, "..", "data", "test_log.txt")
+    dbc_file = validate_file(os.path.join(script_dir, args.dbc), "DBC file")
+    log_file = validate_file(os.path.join(script_dir, args.log), "CAN log file")
 
     # Parse the DBC file
     db = parse_dbc(dbc_file)
